@@ -1,0 +1,160 @@
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 3209 bytes
+
+version AP_RGOS 11.1(9)B1P21, Release(06211815)
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp server cn.pool.ntp.org
+sntp enable
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url 3.3.3.3
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url https://cloud-eu.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 8.8.8.8 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 08113a1c182e0043185e
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloud-eu.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloud-eu.ruijienetworks.com
+no service password-encryption
+!
+clock timezone EuropeBerlin +1 0
+!
+dot11 wlan 1
+ band-select enable
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 100
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface GigabitEthernet 0/1.100
+ encapsulation dot1Q 100
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ shutdown
+ country-code CN
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 1
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ channel 3
+ chan-width 40
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 100
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ country-code CN
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ 11acsupport enable
+ power local 90
+ channel 157
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 100
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+ security rsn enable
+ security rsn ciphers aes enable
+ security rsn akm psk enable
+ security wpa enable
+ security wpa ciphers aes enable
+ security wpa akm psk enable
+ security sta-psk enable
+!
+wlan-qos wlan-based 1 total-user-limit up-streams average-data-rate 100 burst-data-rate 100
+wlan-qos wlan-based 1 total-user-limit down-streams average-data-rate 100 burst-data-rate 100
+wlan-qos wlan-based 1 per-user-limit up-streams average-data-rate 100 burst-data-rate 100
+wlan-qos wlan-based 1 per-user-limit down-streams average-data-rate 100 burst-data-rate 100
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end

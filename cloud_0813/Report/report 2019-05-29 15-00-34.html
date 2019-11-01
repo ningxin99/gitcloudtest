@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>This is a Auto test oftest</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>This is a Auto test oftest</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-05-29 15:00:35</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:53.423000</p>
+<p class='attribute'><strong>Status:</strong> Pass 2</p>
+
+<p class='description'>请用chrome浏览器打开</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test.test_cloud.TestCloud</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_add_group: Test the add_group</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: No handlers could be found for logger "selenium.webdriver.remote.remote_connection"
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test.test_device_config.TestDeviceConfig</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_device_config</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 3434 bytes
+
+version AP_RGOS 11.1(9)B1P16, Release(06171710)
+hostname 710
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-perception enable
+web-auth sta-preemption enable
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url www.facebook.com
+web-auth acl white-url staticxx.facebook.com
+web-auth acl white-url graph.facebook.com
+!
+web-auth template wifidog_1 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ redirect js
+!
+web-auth template wifidog_2 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url http://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+web-auth template wifidog_3 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url http://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+spectral
+!
+cwmp
+ acs url https://cloud-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+free-url url *.facebook.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 04250d0f340a2a444074
+macc wis enable
+log_mng set up HTTP
+log_mng set uu http://cloud-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloud-as.ruijienetworks.com
+macc roam invlan enable
+no service password-encryption
+!
+clock timezone AsiaShanghai +8 0
+!
+link-check disable
+!
+dot11 wlan 1
+ ssid auto_Facebook
+ ssid-code utf-8
+!
+dot11 wlan 2
+ ssid auto_click
+ ssid-code utf-8
+!
+dot11 wlan 3
+ ssid auto_voucher
+ ssid-code utf-8
+!
+dot11 wlan 4
+ ssid auto1
+ ssid-code utf-8
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 128
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ power local 10
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 1/0.2
+ encapsulation dot1Q 1
+ wlan-id 2
+!
+interface Dot11radio 1/0.3
+ encapsulation dot1Q 1
+ wlan-id 3
+!
+interface Dot11radio 1/0.4
+ encapsulation dot1Q 1
+ wlan-id 4
+!
+interface Dot11radio 2/0
+ country-code CN
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ 11acsupport enable
+ power local 10
+ channel 149
+ chan-width 80
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0.2
+ encapsulation dot1Q 1
+ wlan-id 2
+!
+interface Dot11radio 2/0.3
+ encapsulation dot1Q 1
+ wlan-id 3
+!
+interface Dot11radio 2/0.4
+ encapsulation dot1Q 1
+ wlan-id 4
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+ web-auth portal wifidog_1
+ webauth
+!
+wlansec 2
+ web-auth portal wifidog_2
+ webauth
+!
+wlansec 3
+ web-auth portal wifidog_3
+ webauth
+!
+wlansec 4
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

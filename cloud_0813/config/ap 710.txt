@@ -1,0 +1,830 @@
+
+710分组tyty
+Building configuration...
+Current configuration: 2687 bytes
+
+version AP_RGOS 11.1(5)B40P6, Release(05242419)
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 192.168.23.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-perception enable
+web-auth sta-preemption enable
+!
+web-auth template wifidog_2 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url http://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+spectral
+!
+cwmp      
+ acs url http://cloud-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 192.168.23.0 255.255.255.0
+ dns-server 8.8.8.8 
+ default-router 192.168.23.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 0058354a493e1d576c50
+macc wis enable
+log_mng set up HTTP
+log_mng set uu http://cloud-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloud-as.ruijienetworks.com
+no service password-encryption
+!
+clock timezone AsiaShanghai +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid @tyty
+ ssid-code utf-8
+!
+dot11 wlan 2
+ ssid @710-click
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ channel 11
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 1/0.2
+ encapsulation dot1Q 233
+ wlan-id 2
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ 11acsupport enable
+ channel 165
+ chan-width 20
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0.2
+ encapsulation dot1Q 233
+ wlan-id 2
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!         
+interface BVI 233
+ ip address 192.168.23.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+wlansec 2
+ web-auth portal wifidog_2
+ webauth
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+
+
+
+移动到分组test123
+Ruijie>en
+Ruijie#sh run
+
+Building configuration...
+Current configuration: 4989 bytes
+
+version AP_RGOS 11.1(5)B40P6, Release(05242419)
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 10.233.1.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-perception enable
+web-auth sta-preemption enable
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url staticxx.facebook.com
+!
+web-auth template wifidog_2 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url https://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+web-auth template wifidog_4 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url https://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+spectral
+!
+cwmp
+ acs url http://cloud-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 10.233.1.0 255.255.255.0
+ dns-server 8.8.8.8 
+ default-router 10.233.1.1 
+!
+free-url url *.facebook.com
+free-url url *.facebook.net
+free-url url *.fbcdn.net
+free-url url *.akamaihd.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 06142b0a251c17765443
+macc wis enable
+macc nat-config vlan 233 network 10.233.1.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloud-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloud-as.ruijienetworks.com
+macc roam invlan enable
+macc roam enable
+no service password-encryption
+!
+radius-server host 35.198.208.207 auth-port 8021 acct-port 8021 key test
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid @@@59261
+ ssid-code utf-8
+!
+dot11 wlan 2
+ band-select enable
+ ssid www0101
+ ssid-code utf-8
+!
+dot11 wlan 3
+ band-select enable
+ no broadcast-ssid
+ ssid @03
+ ssid-code utf-8
+!
+dot11 wlan 4
+ band-select enable
+ ssid @01bbb
+ ssid-code utf-8
+!
+dot11 wlan 5
+ ssid 123tet
+ ssid-code utf-8
+!
+dot11 wlan 6
+ no broadcast-ssid
+ ssid llllll
+ ssid-code utf-8
+!         
+dot11 wlan 7
+ band-select enable
+ ssid aBinnyTest
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 5
+ channel 11
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 1/0.3
+ encapsulation dot1Q 1
+ wlan-id 3
+!
+interface Dot11radio 1/0.4
+ encapsulation dot1Q 1
+ wlan-id 4
+!
+interface Dot11radio 1/0.5
+ encapsulation dot1Q 1
+ wlan-id 5
+!
+interface Dot11radio 1/0.6
+ encapsulation dot1Q 1
+ wlan-id 6
+!
+interface Dot11radio 2/0
+ shutdown
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 165
+ chan-width 20
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0.2
+ encapsulation dot1Q 233
+ wlan-id 2
+!
+interface Dot11radio 2/0.5
+ encapsulation dot1Q 1
+ wlan-id 5
+!
+interface Dot11radio 2/0.6
+ encapsulation dot1Q 1
+ wlan-id 6
+!
+interface Dot11radio 2/0.7
+ encapsulation dot1Q 1
+ wlan-id 7
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 10.233.1.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+ security rsn enable
+ security rsn ciphers aes enable
+ security rsn akm psk enable
+ security rsn akm psk set-key ascii 123456789
+!
+wlansec 2
+ web-auth portal wifidog_2
+ webauth
+!
+wlansec 3
+ security rsn enable
+ security rsn ciphers aes enable
+ security rsn akm psk enable
+ security rsn akm psk set-key ascii 030330303
+!
+wlansec 4
+ security rsn enable
+ security rsn ciphers aes enable
+ security rsn akm psk enable
+
+
+移动到分组tyty
+Ruijie#sh run
+
+Building configuration...
+Current configuration: 3184 bytes
+
+version AP_RGOS 11.1(5)B40P6, Release(05242419)
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 10.233.1.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-perception enable
+web-auth sta-preemption enable
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url staticxx.facebook.com
+!
+web-auth template wifidog_2 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url http://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+spectral
+!
+cwmp
+ acs url http://cloud-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 10.233.1.0 255.255.255.0
+ dns-server 8.8.8.8 
+ default-router 10.233.1.1 
+!
+free-url url *.facebook.com
+free-url url *.facebook.net
+free-url url *.fbcdn.net
+free-url url *.akamaihd.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 10.233.1.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloud-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloud-as.ruijienetworks.com
+macc roam invlan enable
+macc roam enable
+no service password-encryption
+!
+radius-server host 35.198.208.207 auth-port 8021 acct-port 8021 key test
+clock timezone AsiaShanghai +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid @tyty
+ ssid-code utf-8
+!
+dot11 wlan 2
+ ssid @710-click
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp      
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 5
+ channel 11
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 1/0.2
+ encapsulation dot1Q 233
+ wlan-id 2
+!
+interface Dot11radio 2/0
+ shutdown
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 165
+ chan-width 20
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0.2
+ encapsulation dot1Q 233
+ wlan-id 2
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 10.233.1.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+wlansec 2
+ web-auth portal wifidog_2
+ webauth  
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+210-L
+
+Ruijie#sh run
+
+Building configuration...
+Current configuration: 5022 bytes
+
+version AP_RGOS 11.1(9)B1P14, Release(06151200)
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 10.233.2.0 0.0.0.255 
+!
+ip dhcp snooping
+!
+http redirect port 443
+web-auth sta-perception enable
+web-auth sta-preemption enable
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url staticxx.facebook.com
+!
+web-auth template wifidog_1 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url http://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+web-auth template wifidog_2 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url http://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+web-auth template wifidog_4 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url http://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+web-auth template wifidog_5 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url http://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+web-auth template wifidog_6 wifidog
+ ip 35.198.208.207
+ nas-ip 1.2.3.4
+ url http://samtest.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+web-auth template wifidog_7 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url http://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+web-auth template wifidog_8 wifidog
+ ip 35.190.54.251
+ nas-ip 1.2.3.4
+ url http://portal.ruijienetworks.com/auth/wifidogAuth
+ redirect js
+!
+spectral
+!
+cwmp
+ acs url http://cloud-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+service dhcp
+ip dhcp dns dynamic
+!
+ip dhcp pool def_wlan_2444
+ network 192.168.120.0 255.255.255.0
+ default-router 192.168.120.1 
+!         
+ip dhcp pool macc_sta_pool
+ network 10.233.2.0 255.255.255.0
+ dns-server 8.8.8.8 
+ default-router 10.233.2.1 
+!
+ip name-server 114.114.114.114
+!
+free-url url *.facebook.com
+free-url url *.facebook.net
+free-url url *.fbcdn.net
+free-url url *.akamaihd.net
+enable service web-server http
+webmaster level 0 username admin password 7 0058354a493e1d576c50
+macc wis enable
+macc nat-config vlan 233 network 10.233.2.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloud-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloud-as.ruijienetworks.com
+no service password-encryption
+!
+radius-server host 35.198.208.207 auth-port 8021 acct-port 8021 key test
+clock timezone AsiaShanghai +8 0
+!         
+dot11 wlan 1
+ ssid 210-L-VOU
+ ssid-code utf-8
+!
+dot11 wlan 2
+ ssid @210-voucher-voucher
+ ssid-code utf-8
+!
+dot11 wlan 3
+ ssid @210-123456789
+!
+dot11 wlan 4
+ ssid @210-L-click-1
+ ssid-code utf-8
+!
+dot11 wlan 5
+ ssid @210-L-click-2
+ ssid-code utf-8
+!
+dot11 wlan 6
+ ssid @210-L-click-3
+ ssid-code utf-8
+!
+dot11 wlan 7
+ ssid @210-L-click-click
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+vlan 2444
+!
+interface FastEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ sta-limit 2
+ country-code CN
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ no ampdu-rts
+ channel 6
+ chan-width 40
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 1/0.2
+ encapsulation dot1Q 1
+ wlan-id 2
+!
+interface Dot11radio 1/0.3
+ encapsulation dot1Q 1
+ wlan-id 3
+!
+interface Dot11radio 1/0.4
+ encapsulation dot1Q 233
+ wlan-id 4
+!
+interface Dot11radio 1/0.5
+ encapsulation dot1Q 1
+ wlan-id 5
+!
+interface Dot11radio 1/0.6
+ encapsulation dot1Q 233
+ wlan-id 6
+!
+interface Dot11radio 1/0.7
+ encapsulation dot1Q 1
+ wlan-id 7
+!
+interface BVI 1
+ ip address dhcp
+ ip nat inside
+!
+interface BVI 233
+ ip address 10.233.2.1 255.255.255.0
+ ip nat inside
+!
+interface BVI 2444
+ ip address 192.168.120.1 255.255.255.0
+!
+wlansec 1
+ web-auth portal wifidog_1
+ webauth
+!
+wlansec 2
+ web-auth portal wifidog_2
+ webauth
+!
+wlansec 3
+ security rsn enable
+ security rsn ciphers aes enable
+ security rsn akm psk enable
+ security rsn akm psk set-key ascii ewebwifi
+ security wpa enable
+ security wpa ciphers aes enable
+ security wpa akm psk enable
+ security wpa akm psk set-key ascii ewebwifi
+!
+wlansec 4
+ web-auth portal wifidog_4
+ webauth
+!         
+wlansec 5
+ web-auth portal wifidog_5
+ webauth
+!
+wlansec 6
+ security rsn enable
+ security rsn ciphers aes enable
+ security rsn akm psk enable
+ security rsn akm psk set-key ascii 123456789
+ web-auth portal wifidog_6
+ webauth
+!
+wlansec 7
+ web-auth portal wifidog_7
+ webauth
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!         
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+
+210移动到分组test123，下发了10网段的地址池
+ip dhcp pool macc_sta_pool
+ network 10.233.2.0 255.255.255.0
+ dns-server 8.8.8.8 
+ default-router 10.233.2.1 
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 10.233.2.1 255.255.255.0
+ ip nat inside
+!
+
+210移动到分组test142

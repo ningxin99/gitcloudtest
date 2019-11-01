@@ -1,0 +1,8 @@
+AP710
+1.15
+AP_RGOS 11.1(5)B40P2, Release(05151412)
+G1L919900130B
+channel 6
+chan-width 20
+channel 157
+chan-width 80

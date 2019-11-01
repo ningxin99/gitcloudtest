@@ -1,0 +1,231 @@
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 4002 bytes
+
+version AP_RGOS 11.1(5)B40P2, Release(05151412)
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 10.233.1.0 0.0.0.255
+!
+ip dhcp snooping
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url www.facebook.com
+web-auth acl white-url staticxx.facebook.com
+web-auth acl white-url graph.facebook.com
+username admin password ruijie123
+!
+spectral
+!
+cwmp
+ acs url https://cloud-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 10.233.1.0 255.255.255.0
+ dns-server 8.8.8.8
+ default-router 10.233.1.1
+!
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+free-url url *.facebook.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 10.233.1.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloud-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloud-as.ruijienetworks.com
+macc roam invlan enable
+no service password-encryption
+!
+radius-server host 1.2.3.3 auth-port 23 acct-port 23 key 12345
+clock timezone AsiaShanghai +8 0
+!
+link-check disable
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid auto
+ ssid-code utf-8
+!
+dot11 wlan 2
+ ssid 3_auto
+ ssid-code utf-8
+!
+dot11 wlan 3
+ ssid 4_auto
+ ssid-code utf-8
+!
+dot11 wlan 4
+ ssid 5_auto
+ ssid-code utf-8
+!
+dot11 wlan 5
+ ssid 6_auto
+ ssid-code utf-8
+!
+dot11 wlan 6
+ ssid 7_auto
+ ssid-code utf-8
+!
+dot11 wlan 7
+ ssid 8_auto
+ ssid-code utf-8
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+enable secret 5 $1$7eyy$s2p8x7sr0yD7qAq6
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ sta-limit 128
+ country-code CN
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 233
+ wlan-id 1
+!
+interface Dot11radio 1/0.2
+ encapsulation dot1Q 1
+ wlan-id 2
+!
+interface Dot11radio 1/0.3
+ encapsulation dot1Q 1
+ wlan-id 3
+!
+interface Dot11radio 1/0.4
+ encapsulation dot1Q 1
+ wlan-id 4
+!
+interface Dot11radio 1/0.5
+ encapsulation dot1Q 1
+ wlan-id 5
+!
+interface Dot11radio 1/0.6
+ encapsulation dot1Q 1
+ wlan-id 6
+!
+interface Dot11radio 1/0.7
+ encapsulation dot1Q 1
+ wlan-id 7
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ sta-limit 100
+ country-code CN
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 1
+ antenna transmit 1
+ mu-mimo enable
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ 11acsupport enable
+ channel 157
+ chan-width 80
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 233
+ wlan-id 1
+!
+interface Dot11radio 2/0.2
+ encapsulation dot1Q 1
+ wlan-id 2
+!
+interface Dot11radio 2/0.3
+ encapsulation dot1Q 1
+ wlan-id 3
+!
+interface Dot11radio 2/0.4
+ encapsulation dot1Q 1
+ wlan-id 4
+!
+interface Dot11radio 2/0.5
+ encapsulation dot1Q 1
+ wlan-id 5
+!
+interface Dot11radio 2/0.6
+ encapsulation dot1Q 1
+ wlan-id 6
+!
+interface Dot11radio 2/0.7
+ encapsulation dot1Q 1
+ wlan-id 7
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 10.233.1.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+wlansec 2
+!
+wlansec 3
+!
+wlansec 4
+!
+wlansec 5
+!
+wlansec 6
+!
+wlansec 7
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
