@@ -88,7 +88,7 @@ class BasicCommon(unittest.TestCase):
         print (firmware_ap_before_upgrade_upgrade[-10:])
         self.assertEqual(firmware_ap[-10:], firmware_ap_before_upgrade_upgrade[-10:])
         print (u"AP升级成功！")
-
+    '''
     def test12_upgrade_ap(self):
         """AP版本回退操作"""
         # 回退到原本的版本
@@ -135,54 +135,54 @@ class BasicCommon(unittest.TestCase):
         print (u"回退后的AP版本" + firmware_ap_before_upgrade_upgrade)
         self.assertEqual(firmware_ap[-10:], firmware_ap_before_upgrade_upgrade[-10:])
         print (u"AP回退成功！")
-    #
-    # def test13_upgrade_sw(self):
-    #     """交换机升级操作"""
-    #     time.sleep(5)
-    #     self.operate.click_elem(maintenance)
-    #     self.operate.click_elem(upgrade_upgrade)
-    #     time.sleep(5)
-    #     global firmware_sw_now
-    #     firmware_sw_now = self.operate.find_elem(upgrade_device_SW_v).text
-    #     print (u"SW原本的版本："+ firmware_sw_now)
-    #     self.operate.click_elem(upgrade_device_SW)
-    #     self.operate.click_elem(select_firmware)
-    #     self.operate.click_elem(select_firmware_private)
-    #     global firmware_sw
-    #     firmware_sw = self.operate.find_elem(select_firmware_list_tr1_td2).text
-    #     if firmware_sw_now[-10:] == firmware_sw[-10:]:
-    #         self.operate.click_elem(select_firmware_list_tr2_td1)
-    #         global firmware_sw
-    #         firmware_sw = self.operate.find_elem(select_firmware_list_tr2_td2).text
-    #     else:
-    #         self.operate.click_elem(select_firmware_list_tr1_td1)
-    #     print (u"选择升级的SW版本：" + firmware_sw)
-    #     self.operate.click_elem(upgrade_finish)
-    #     time.sleep(2)
-    #     self.operate.click_elem(select_firmware_upgrade)
-    #     time.sleep(15)
-    #
-    #     # 验证SW升级操作成功
-    #     self.operate.click_elem(maintenance)
-    #     self.operate.click_elem(view_log_upgrade_log)
-    #     print (u"SW升级中~")
-    #     while True:
-    #         try:
-    #             self.operate.find_elem(view_log_upgrade_log_success)
-    #         except Exception as e:
-    #             print (e)
-    #             time.sleep(5)
-    #             self.operate.click_elem(view_log_upgrade_log_refresh)
-    #         else:
-    #             self.operate.click_elem(upgrade_upgrade)
-    #             break
-    #     firmware_sw_now_upgrade = self.operate.find_elem(upgrade_device_SW_v).text
-    #     # global firmware_sw
-    #     # print (firmware_sw[-10:])
-    #     print (u"升级后的SW版本："+ firmware_sw_now_upgrade[-10:])
-    #     self.assertEqual(firmware_sw[-10:], firmware_sw_now_upgrade[-10:])
-    #     print (u"SW升级成功！")
-    #
+    '''
+    def test13_upgrade_sw(self):
+        """交换机升级操作"""
+        time.sleep(5)
+        self.operate.click_elem(maintenance)
+        self.operate.click_elem(upgrade_upgrade)
+        time.sleep(5)
+        global firmware_sw_now
+        firmware_sw_now = self.operate.find_elem(upgrade_device_SW_v).text
+        print (u"SW原本的版本："+ firmware_sw_now)
+        self.operate.click_elem(upgrade_device_SW)
+        self.operate.click_elem(select_firmware)
+        self.operate.click_elem(select_firmware_private)
+        global firmware_sw
+        firmware_sw = self.operate.find_elem(select_firmware_list_tr1_td2).text
+        if firmware_sw_now[-10:] == firmware_sw[-10:]:
+            self.operate.click_elem(select_firmware_list_tr2_td1)
+            global firmware_sw
+            firmware_sw = self.operate.find_elem(select_firmware_list_tr2_td2).text
+        else:
+            self.operate.click_elem(select_firmware_list_tr1_td1)
+        print (u"选择升级的SW版本：" + firmware_sw)
+        self.operate.click_elem(upgrade_finish)
+        time.sleep(2)
+        self.operate.click_elem(select_firmware_upgrade)
+        time.sleep(15)
+
+        # 验证SW升级操作成功
+        self.operate.click_elem(maintenance)
+        self.operate.click_elem(view_log_upgrade_log)
+        print (u"SW升级中~")
+        while True:
+            try:
+                self.operate.find_elem(view_log_upgrade_log_success)
+            except Exception as e:
+                print (e)
+                time.sleep(5)
+                self.operate.click_elem(view_log_upgrade_log_refresh)
+            else:
+                self.operate.click_elem(upgrade_upgrade)
+                break
+        firmware_sw_now_upgrade = self.operate.find_elem(upgrade_device_SW_v).text
+        # global firmware_sw
+        # print (firmware_sw[-10:])
+        print (u"升级后的SW版本："+ firmware_sw_now_upgrade[-10:])
+        self.assertEqual(firmware_sw[-10:], firmware_sw_now_upgrade[-10:])
+        print (u"SW升级成功！")
+
     # def test14_upgrade_sw(self):
     #     """交换机回退操作"""
     #     time.sleep(5)
@@ -273,7 +273,7 @@ class BasicCommon(unittest.TestCase):
         self.assertEqual(firmware_eg[-10:], firmware_eg_now_upgrade[-10:])
         print (u"EG升级成功！")
 
-
+    '''
     def test16_upgrade_eg(self):
         """EG版本回退操作"""
         time.sleep(5)
@@ -360,7 +360,7 @@ class BasicCommon(unittest.TestCase):
             self.operate.find_elem(view_log_upgrade_log_success_3)
         except Exception as e:
             self.assertIsNotNone(None, u"批量升级不成功")
-
+    '''
 
 
 

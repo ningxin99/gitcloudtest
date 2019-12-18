@@ -57,7 +57,7 @@ class DeviceEg(unittest.TestCase):
         self.operate.click_elem(add_device_add_gateway)
         time.sleep(5)
         self.operate.elem_send_keys(add_device_alert_sn_gateway, add_device_alert_input_sn_gateway)
-        self.operate.elem_send_keys(add_device_alert_eg_alias, 'EG123')
+        self.operate.elem_send_keys(add_device_alert_eg_alias, device_input_alias_data)
         self.operate.elem_send_keys(add_device_alert_password, 'ruijie123')
         self.operate.click_elem(add_device_alert_save_gateway)
         time.sleep(20)
@@ -153,6 +153,8 @@ class DeviceEg(unittest.TestCase):
         sn_text_eg = self.operate.find_elem(add_device_EG_info_SN).text
         # 关闭详情页面
         self.operate.click_elem(add_device_device_info_close)
+        print model_text_eg,version_text_eg,string_escape(version_text_eg),sn_text_eg
+        print text
         t = re.search(model_text_eg + '[\S\s]*' + string_escape(version_text_eg) + '[\S\s]*' + sn_text_eg, text)
         self.assertIsNotNone(t)
 
@@ -163,11 +165,14 @@ class DeviceEg(unittest.TestCase):
         self.operate.click_elem(add_device_eg_info.format(add_device_alert_input_sn_gateway))
         time.sleep(2)
         view_path = self.operate.save_screen_shot('viewEG')
+        val_memory = 0
+        val_cpu = 0
         try:
             element_cpu = self.operate.find_elem(device_eg_detail_cpu)
             element_memory = self.operate.find_elem(device_eg_detail_memory)
             self.operate.find_elem(device_eg_detail_rate_summary)
         except:
+            print ("cpu/memory无数据")
             self.assertIsNotNone(None, u"cpu/memory无数据")
         else:
             # mmeory图片截图
@@ -295,6 +300,7 @@ class DeviceEg(unittest.TestCase):
         self.operate.click_elem(add_device_eg_info.format(add_device_alert_input_sn_gateway))
         self.operate.click_elem(device_eg_detail_more)
         self.operate.click_elem(device_eg_ssh)
+        t = 'fail'
         try:
             t = self.operate.find_elem(device_eg_ssh_content, by=By.XPATH, wait_times=300).text
         except Exception as e:
@@ -334,9 +340,9 @@ class DeviceEg(unittest.TestCase):
         self.operate.click_elem(add_device_device_info_close)
         # 验证CWMP保活时间下发
         t = re.search('cwmp' + '[^!]*' + 'cpe inform interval 180', text)
-        self.assertIsNone(t)
+        self.assertIsNotNone(t)
         # 验证下发设备别名
-        t = re.search('hostname ' + device_input_alias_data)
+        t = re.search('hostname ' + device_input_alias_data, text)
         self.assertIsNotNone(t)
 
 

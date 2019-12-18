@@ -1,0 +1,93 @@
+2019-11-18 09:40:30,187 - framework - INFO - 发送邮件cloud自动化测试报告成功！ 收件人：321162718@qq.com;why119613@163.com
+2019-11-18 09:43:52,739 - framework - INFO - 发送邮件cloud自动化测试报告成功！ 收件人：321162718@qq.com;why119613@163.com
+2019-11-18 09:45:57,013 - framework - WARNING - cloud_basic_check.py
+2019-11-18 09:54:51,717 - framework - WARNING - cloud_basic_check.py
+2019-11-18 10:22:26,292 - framework - WARNING - cloud_basic_check.py
+2019-11-18 10:53:07,171 - framework - WARNING - cloud_basic_check.py
+2019-11-18 10:53:49,615 - framework - WARNING - cloud_basic_check.py
+2019-11-18 11:04:30,035 - framework - WARNING - cloud_basic_check.py
+2019-11-18 11:06:28,994 - framework - WARNING - cloud_basic_check.py
+2019-11-18 11:14:28,510 - framework - WARNING - cloud_basic_check.py
+2019-11-18 11:23:01,138 - framework - WARNING - cloud_basic_check.py
+2019-11-18 11:29:19,835 - framework - WARNING - cloud_basic_check.py
+2019-11-18 14:44:50,809 - framework - WARNING - cloud_basic_check.py
+2019-11-18 15:48:22,178 - framework - WARNING - cloud_config_basic.py
+2019-11-18 15:50:21,494 - framework - INFO - 发送邮件cloud自动化测试报告成功！ 收件人：321162718@qq.com;why119613@163.com
+2019-11-18 15:51:08,582 - framework - WARNING - cloud_config_basic.py
+2019-11-18 15:58:19,290 - framework - WARNING - cloud_config_basic.py
+2019-11-18 16:07:32,427 - framework - WARNING - cloud_config_deliver.py
+2019-11-18 16:10:34,648 - framework - WARNING - cloud_config_group.py
+2019-11-18 16:14:04,569 - framework - WARNING - cloud_config_voucher.py
+2019-11-18 16:21:55,250 - framework - WARNING - cloud_device_ap_cloudtest_as.py
+2019-11-18 16:36:42,158 - framework - WARNING - cloud_device_EG.py
+2019-11-18 16:59:54,549 - framework - WARNING - cloud_device_sw.py
+2019-11-18 17:10:13,151 - framework - INFO - 发送邮件cloud自动化测试报告成功！ 收件人：321162718@qq.com;why119613@163.com
+2019-11-18 17:11:52,644 - framework - WARNING - cloud_config_basic.py
+2019-11-18 19:32:03,746 - framework - WARNING - cloud_config_basic.py
+2019-11-19 15:01:11,194 - framework - WARNING - cloud_config_basic.py
+2019-11-19 19:16:28,009 - framework - WARNING - cloud_config_basic.py
+2019-11-19 19:23:46,019 - framework - WARNING - cloud_config_basic.py
+2019-11-19 19:27:42,921 - framework - WARNING - cloud_config_basic.py
+2019-11-19 20:21:20,816 - framework - WARNING - cloud_config_basic.py
+2019-11-20 17:12:00,250 - framework - WARNING - cloud_config_basic.py
+2019-11-20 19:22:27,045 - framework - WARNING - cloud_config_basic.py
+2019-11-20 19:57:46,602 - framework - WARNING - cloud_config_deliver.py
+2019-11-20 20:00:50,561 - framework - WARNING - cloud_config_group.py
+2019-11-20 20:04:23,322 - framework - WARNING - cloud_config_voucher.py
+2019-11-20 20:12:29,667 - framework - WARNING - cloud_device_ap_cloudtest_as.py
+2019-11-20 20:13:51,717 - framework - WARNING - cloud_device_EG.py
+2019-11-20 20:33:02,967 - framework - WARNING - cloud_device_sw.py
+2019-11-20 20:53:53,506 - framework - INFO - 发送邮件cloud自动化测试报告成功！ 收件人：321162718@qq.com;why119613@163.com
+2019-11-21 10:46:46,769 - framework - WARNING - cloud_device_EG.py
+2019-11-21 11:34:50,720 - framework - WARNING - cloud_device_EG.py
+2019-11-21 13:56:37,825 - framework - WARNING - cloud_device_EG.py
+2019-11-21 14:17:55,299 - framework - WARNING - cloud_device_EG.py
+2019-11-21 14:25:57,365 - framework - WARNING - cloud_device_EG.py
+2019-11-21 15:04:03,398 - framework - WARNING - cloud_device_EG.py
+2019-11-21 15:42:22,733 - framework - WARNING - cloud_device_EG.py
+2019-11-21 15:52:05,596 - framework - WARNING - cloud_device_sw.py
+2019-11-21 16:23:55,263 - framework - WARNING - cloud_device_sw.py
+2019-11-21 16:34:58,194 - framework - WARNING - cloud_device_sw.py
+2019-11-21 16:35:22,668 - framework - WARNING - cloud_device_sw.py
+2019-11-21 16:43:16,328 - framework - WARNING - cloud_device_sw.py
+2019-11-21 16:46:10,703 - framework - WARNING - cloud_device_sw.py
+2019-11-21 16:46:22,723 - framework - WARNING - cloud_device_sw.py
+2019-11-21 16:47:59,239 - framework - WARNING - cloud_device_sw.py
+2019-11-21 16:50:26,755 - framework - WARNING - cloud_device_sw.py
+2019-11-21 16:56:36,061 - framework - WARNING - cloud_config_basic.py
+2019-11-21 17:31:26,825 - framework - WARNING - cloud_config_deliver.py
+2019-11-21 17:34:31,243 - framework - WARNING - cloud_config_group.py
+2019-11-21 17:38:09,776 - framework - WARNING - cloud_config_voucher.py
+2019-11-21 17:46:05,493 - framework - WARNING - cloud_device_ap_cloudtest_as.py
+2019-11-21 17:47:27,112 - framework - WARNING - cloud_device_EG.py
+2019-11-21 18:09:45,444 - framework - WARNING - cloud_device_sw.py
+2019-11-21 18:25:53,588 - framework - INFO - 发送邮件cloud自动化测试报告成功！ 收件人：321162718@qq.com;why119613@163.com
+2019-11-21 18:41:45,780 - framework - WARNING - cloud_config_basic.py
+2019-11-21 19:15:27,723 - framework - WARNING - cloud_config_deliver.py
+2019-11-21 19:18:30,654 - framework - WARNING - cloud_config_group.py
+2019-11-21 19:23:26,673 - framework - WARNING - cloud_config_voucher.py
+2019-11-21 19:24:31,871 - framework - INFO - 发送邮件cloud自动化测试报告成功！ 收件人：321162718@qq.com;why119613@163.com
+2019-11-22 10:18:54,085 - framework - WARNING - cloud_config_basic.py
+2019-11-22 10:36:31,740 - framework - WARNING - cloud_config_basic.py
+2019-11-22 10:41:24,456 - framework - WARNING - cloud_config_basic.py
+2019-11-22 11:06:57,295 - framework - WARNING - cloud_config_basic.py
+2019-11-22 11:22:43,131 - framework - WARNING - cloud_config_deliver.py
+2019-11-22 11:25:50,309 - framework - WARNING - cloud_config_group.py
+2019-11-22 11:29:28,226 - framework - WARNING - cloud_config_voucher.py
+2019-11-22 11:36:34,234 - framework - INFO - 发送邮件cloud自动化测试报告成功！ 收件人：321162718@qq.com;why119613@163.com
+2019-11-22 13:55:38,871 - framework - WARNING - cloud_config_basic.py
+2019-11-22 14:25:07,582 - framework - WARNING - cloud_config_deliver.py
+2019-11-22 14:28:23,562 - framework - WARNING - cloud_config_group.py
+2019-11-22 14:31:54,066 - framework - WARNING - cloud_config_voucher.py
+2019-11-22 14:39:45,398 - framework - WARNING - cloud_device_ap_cloudtest_as.py
+2019-11-22 14:50:50,713 - framework - WARNING - cloud_device_EG.py
+2019-11-22 15:13:43,275 - framework - WARNING - cloud_device_sw.py
+2019-11-22 15:22:48,325 - framework - INFO - 发送邮件cloud自动化测试报告成功！ 收件人：321162718@qq.com;why119613@163.com
+2019-11-22 15:46:35,710 - framework - WARNING - cloud_config_basic.py
+2019-11-22 16:28:52,062 - framework - WARNING - cloud_config_deliver.py
+2019-11-22 16:32:11,611 - framework - WARNING - cloud_config_group.py
+2019-11-22 16:35:43,130 - framework - WARNING - cloud_config_voucher.py
+2019-11-22 16:43:10,664 - framework - WARNING - cloud_device_ap_cloudtest_as.py
+2019-11-22 16:56:49,305 - framework - WARNING - cloud_device_EG.py
+2019-11-22 17:10:17,829 - framework - WARNING - cloud_device_sw.py
+2019-11-22 17:18:30,165 - framework - INFO - 发送邮件cloud自动化测试报告成功！ 收件人：321162718@qq.com;why119613@163.com

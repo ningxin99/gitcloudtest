@@ -59,6 +59,7 @@ class ComFunction(object):
             WebDriverWait(self.driver, wait_times).until(ec.visibility_of_element_located((by, locator)))
         except Exception as e:
             self.save_screen_shot()
+            print e
             raise e
 
 
@@ -102,7 +103,7 @@ class ComFunction(object):
         :return: 返回元素
         """
         self.elem_wait(locator, by, wait_times)
-        time.sleep(0.8)
+        time.sleep(1.8)
         ele = self.driver.find_element(by, locator)
         return ele
 

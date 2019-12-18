@@ -186,7 +186,8 @@ add_device_alert_save_gateway = "//button[@id='singleImp']"
 # 退出添加设备弹框
 add_device_alert_exit = "//div[@class='modal-header']/button[@class='close']/span"
 # 找到在线的AP设备
-add_device_online_ap = "//table[@id='devicesList_table']//tbody//*[text()='Online']"
+add_device_online_ap ="//table[@id='devicesList_table']//tbody//*[@class='icon icon-determine']"
+# add_device_online_ap = "//tr[@data-index=0]//*[@class='columns-minwidth']"
 # 找到在线的sw
 add_device_online_sw = "//table[@id='switch_table']//tbody//*[text()='Online']"
 # 找到在线的EG设备
@@ -281,6 +282,8 @@ device_diagnosis = "//li[@id='diagnosisAp']"
 device_restart = "//li[@id='restartAp']/a"
 # 点击确定重启
 key_OK = "//button[text()='OK']"
+ppsk_key_OK = "//*[text()='OK']"
+whitelist_key_OK = "//*[text()='OK']"
 # 点击running config
 device_running_config = "//ul[@class='cli-item']/li[2]"
 # 点击Web CLI
@@ -333,7 +336,7 @@ view_log_upgrade_log_refresh = "//a[@id='upgradelog_refresh']"
 view_log_upgrade_log_success = "//table[@id='upgradelog_table']/tbody/tr[1]/td[6]/span[1][text()='1']"
 view_log_upgrade_log_success_2 = "//table[@id='upgradelog_table']/tbody/tr[2]/td[6]/span[1][text()='1']"
 view_log_upgrade_log_success_3 = "//table[@id='upgradelog_table']/tbody/tr[3]/td[6]/span[1][text()='1']"
-
+view_log_upgrade_log_fail = "//table[@id='upgradelog_table']/tbody/tr[1]/td[6]/span[2][text()='1']"
 # 定位到设备列表中的搜索框
 upgrade_device_search = "//input[@id='devicesList_qs_key']"
 # 设备列表长度
@@ -350,10 +353,10 @@ upgrade_device_01 = "//table[@id='devicesList_table']/tbody/tr[1]/td[11]/a"
 upgrade_device_02 = "//table[@id='devicesList_table']/tbody/tr[2]/td[11]/a"
 upgrade_device_03 = "//table[@id='devicesList_table']/tbody/tr[3]/td[11]/a"
 upgrade_device_AP = "//table[@id='devicesList_table']/tbody//td[6][contains(text() , 'AP')]/following-sibling::td[5]"
-upgrade_device_SW = "//table[@id='devicesList_table']/tbody//td[6][contains(text() , 'NB')]/following-sibling::td[5]"
+upgrade_device_SW = "//table[@id='devicesList_table']/tbody//td[6][not(contains(text() , 'AP')) and not(contains(text() , 'EG'))]/following-sibling::td[5]"
 upgrade_device_EG = "//table[@id='devicesList_table']/tbody//td[6][contains(text() , 'EG')]/following-sibling::td[5]"
 upgrade_device_AP_v = "//table[@id='devicesList_table']/tbody//td[6][contains(text() , 'AP')]/following-sibling::td[2]"
-upgrade_device_SW_v = "//table[@id='devicesList_table']/tbody//td[6][contains(text() , 'NB')]/following-sibling::td[2]"
+upgrade_device_SW_v = "//table[@id='devicesList_table']/tbody//td[6][not(contains(text() , 'AP')) and not(contains(text() , 'EG'))]/following-sibling::td[2]"
 upgrade_device_EG_v = "//table[@id='devicesList_table']/tbody//td[6][contains(text() , 'EG')]/following-sibling::td[2]"
 
 # 得到设备列表中第一行model
@@ -398,6 +401,7 @@ view_log_config_execution_list = '//*[@id="configlogdetail_table"]'
 
 # 点击保存
 key_save = "//button[text()='Save']"
+config_ssid_forward_nat_pool_key_save = "//button[@class='btn btn-default pull-right ladda-button'][2]"
 
 
 # 点击批量升级

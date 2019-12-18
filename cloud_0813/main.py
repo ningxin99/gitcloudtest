@@ -27,8 +27,8 @@ class TestRunner(object):
     def run(self):
         tests = unittest.defaultTestLoader.discover(self.case_path,
                                                     # pattern=self.case_name + '*.py',
-                                                     pattern='cloud_' + '*.py',
-                                                    # pattern='cloud_device_EG.py',
+                                                    pattern='cloud_' + '*.py',
+                                                    # pattern='cloud_basic_check.py',
                                                     top_level_dir=None)
         with open(report, 'wb') as f:
             runner = HTMLTestRunner(f, verbosity=2, title=self.title, description=self.description)
@@ -53,7 +53,10 @@ if __name__ == '__main__':
         try:
             now_time = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
             report = REPORT_PATH + '\\report' + ' ' + now_time + 'num' + str(i) + '.html'
-            test = TestRunner(run_case_name, case_path=CASE_PATH_BASIC_OPERATE, title="测试用例：" + run_case_name)
+            if run_case_package == 'basic_operate':
+               test = TestRunner(run_case_name, case_path=CASE_PATH_BASIC_OPERATE, title="测试用例：" + run_case_name)
+            else:
+                test = TestRunner(run_case_name, case_path=CASE_PATH_BEFORE_UPGRADE, title="测试用例：" + run_case_name)
             test.run()
         except Exception as b:
             print("test run error:%s" % str(b))

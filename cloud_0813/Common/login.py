@@ -25,6 +25,6 @@ class Login:
         self.operate.elem_send_keys(user_name_xpath, self.login_user)
         self.operate.elem_send_keys(password_xpath, self.login_password)
         self.operate.click_elem(login_btn_xpath)
-        time.sleep(10)
+        time.sleep(15)
         self.operate.click_elem(login_close_tips_xpath)
 

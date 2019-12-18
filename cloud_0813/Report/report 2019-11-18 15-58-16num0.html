@@ -1,0 +1,2201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试用例：cloud</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { word-wrap:break-word;word-break:break-all;overflow:auto;}
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+    font-size: 16pt;
+    color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: 00;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 600px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }        }        if (id.substr(0,2) == 'st') {           if (level > 1) {               tr.className = '';            }           else {               tr.className = 'hiddenRow';           }
+        }
+    }
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+         if (!tr) {
+            tid = 's' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&');
+    s = s.replace(/</g,'<');
+    s = s.replace(/>/g,'>');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>测试用例：cloud</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-11-18 15:58:16</p>
+<p class='attribute'><strong>Duration:</strong> 1:11:54.642000</p>
+<p class='attribute'><strong>Status:</strong> Pass 41 Failure 6 Error 21</p>
+
+<p class='description'></p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>Skip</td>
+    <td>View</td>
+    <td>Screenshot</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>ConfigBasic</td>
+    <td>17</td>
+    <td>3</td>
+    <td>0</td>
+    <td>14</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',17)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_ssid_default_not_hidden: 验证SSID默认不隐藏</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: NAA
+AP running 命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_ssid_hidden: 验证配置SSID隐藏可以成功下发/SSID不加密</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: AP running 命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_ssid_nat_common: 验证NAT地址池可成功下发</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: AP running 命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test05_ssid_nat_custom: 验证自定义的nat地址池可成功下发</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
+        error</a>
+
+    <div id='div_ft1.4' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.4: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_config_basic_py_test05_ssid_nat_custom.png
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 216, in test05_ssid_nat_custom
+    self.operate.click_elem(key_save)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_config_basic_py_test05_ssid_nat_custom.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='errorCase'><div class='testcase'>test06_ssid_nat_bridge: 验证AP bridge模式可成功下发/默认下发2个radio/默认支持128个客户端/telnet 密码下发/5G优先关闭</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        error</a>
+
+    <div id='div_ft1.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 273, in test06_ssid_nat_bridge
+    self.operate.click_elem(config_ssid_edit)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;a class="icon icon-modify editSSID" data="{&amp;quot;id&amp;quot;:9345,&amp;quot;wlanId&amp;quot;:1,&amp;quot;ssidName&amp;quot;:&amp;quot;@test_default&amp;quot;,&amp;quot;ssidEncode&amp;quot;:&amp;quot;utf-8&amp;quot;,&amp;quot;relatedRadio&amp;quot;:&amp;quot;1,2&amp;quot;,&amp;quot;ishidden&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;fowardType&amp;quot;:&amp;quot;nat&amp;quot;,&amp;quot;encryptionMode&amp;quot;:&amp;quot;open&amp;quot;,&amp;quot;password&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;qosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;wlanQosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;authEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;bandSelectEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;ppskEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;usersLimit&amp;quot;:0,&amp;quot;radiusServerAll&amp;quot;:[],&amp;quot;isApartment&amp;quot;:&amp;quot;false&amp;quot;}"&gt;&lt;/a&gt; is not clickable at point (1707, 349). Other element would receive the click: &lt;div class="modal fade in" tabindex="-1" role="dialog" style="display: block; z-index: 2;"&gt;...&lt;/div&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.6' class='none'>
+    <td class='errorCase'><div class='testcase'>test07_ssid_radio_Max_clients: 验证radio 支持的最大客户端数下发成功</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
+        error</a>
+
+    <div id='div_ft1.6' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.6: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 342, in test07_ssid_radio_Max_clients
+    self.operate.elem_clear_send_keys(config_ssid_radio_1_max_client, '1')
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 148, in elem_clear_send_keys
+    ele.send_keys(keys)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 320, in send_keys
+    self._execute(Command.SEND_KEYS_TO_ELEMENT, {'value': keys_to_typing(value)})
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element not interactable
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.7' class='none'>
+    <td class='errorCase'><div class='testcase'>test08_ssid_bridge: 验证关闭radio 2,打开radio 1</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.7')" >
+        error</a>
+
+    <div id='div_ft1.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.7: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 399, in test08_ssid_bridge
+    self.operate.click_elem(config_ssid_radio_2)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;label for="toggle-R2"&gt;&lt;/label&gt; is not clickable at point (1051, 518). Other element would receive the click: &lt;p style="text-align:center;color:#333;word-wrap:break-word;"&gt;...&lt;/p&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.8' class='none'>
+    <td class='errorCase'><div class='testcase'>test09_ssid_bridge_2: 验证关闭radio 1,打开radio 2</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.8')" >
+        error</a>
+
+    <div id='div_ft1.8' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.8: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 453, in test09_ssid_bridge_2
+    self.operate.click_elem(config_ssid_radio_1)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;label for="toggle-R1"&gt;&lt;/label&gt; is not clickable at point (531, 518). Other element would receive the click: &lt;div class="modal fade in" tabindex="-1" role="dialog" style="display: block; z-index: 2;"&gt;...&lt;/div&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.9' class='none'>
+    <td class='errorCase'><div class='testcase'>test10_ssid_wpa_psk: 验证SSID加密方式为wpa_psk</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.9')" >
+        error</a>
+
+    <div id='div_ft1.9' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.9: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 510, in test10_ssid_wpa_psk
+    self.operate.click_elem(config_ssid_edit)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;a class="icon icon-modify editSSID" data="{&amp;quot;id&amp;quot;:9345,&amp;quot;wlanId&amp;quot;:1,&amp;quot;ssidName&amp;quot;:&amp;quot;@test_default&amp;quot;,&amp;quot;ssidEncode&amp;quot;:&amp;quot;utf-8&amp;quot;,&amp;quot;relatedRadio&amp;quot;:&amp;quot;1,2&amp;quot;,&amp;quot;ishidden&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;fowardType&amp;quot;:&amp;quot;nat&amp;quot;,&amp;quot;encryptionMode&amp;quot;:&amp;quot;open&amp;quot;,&amp;quot;password&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;qosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;wlanQosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;authEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;bandSelectEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;ppskEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;usersLimit&amp;quot;:0,&amp;quot;radiusServerAll&amp;quot;:[],&amp;quot;isApartment&amp;quot;:&amp;quot;false&amp;quot;}"&gt;&lt;/a&gt; is not clickable at point (1707, 349). Other element would receive the click: &lt;div class="modal fade in" tabindex="-1" role="dialog" style="display: block; z-index: 2;"&gt;...&lt;/div&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.10' class='none'>
+    <td class='errorCase'><div class='testcase'>test11_ssid_wpa2_psk: 验证SSID加密方式为wpa2_psk</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.10')" >
+        error</a>
+
+    <div id='div_ft1.10' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.10: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 567, in test11_ssid_wpa2_psk
+    self.operate.click_elem(config_ssid_edit)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;a class="icon icon-modify editSSID" data="{&amp;quot;id&amp;quot;:9345,&amp;quot;wlanId&amp;quot;:1,&amp;quot;ssidName&amp;quot;:&amp;quot;@test_default&amp;quot;,&amp;quot;ssidEncode&amp;quot;:&amp;quot;utf-8&amp;quot;,&amp;quot;relatedRadio&amp;quot;:&amp;quot;1,2&amp;quot;,&amp;quot;ishidden&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;fowardType&amp;quot;:&amp;quot;nat&amp;quot;,&amp;quot;encryptionMode&amp;quot;:&amp;quot;open&amp;quot;,&amp;quot;password&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;qosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;wlanQosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;authEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;bandSelectEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;ppskEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;usersLimit&amp;quot;:0,&amp;quot;radiusServerAll&amp;quot;:[],&amp;quot;isApartment&amp;quot;:&amp;quot;false&amp;quot;}"&gt;&lt;/a&gt; is not clickable at point (1707, 349). Other element would receive the click: &lt;div class="modal fade in" tabindex="-1" role="dialog" style="display: block; z-index: 2;"&gt;...&lt;/div&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.11' class='none'>
+    <td class='errorCase'><div class='testcase'>test12_ssid_wap_wpa2_psk: 验证SSID加密方式为wpa/wpa2_psk</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.11')" >
+        error</a>
+
+    <div id='div_ft1.11' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.11: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 625, in test12_ssid_wap_wpa2_psk
+    self.operate.click_elem(config_ssid_edit)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;a class="icon icon-modify editSSID" data="{&amp;quot;id&amp;quot;:9345,&amp;quot;wlanId&amp;quot;:1,&amp;quot;ssidName&amp;quot;:&amp;quot;@test_default&amp;quot;,&amp;quot;ssidEncode&amp;quot;:&amp;quot;utf-8&amp;quot;,&amp;quot;relatedRadio&amp;quot;:&amp;quot;1,2&amp;quot;,&amp;quot;ishidden&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;fowardType&amp;quot;:&amp;quot;nat&amp;quot;,&amp;quot;encryptionMode&amp;quot;:&amp;quot;open&amp;quot;,&amp;quot;password&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;qosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;wlanQosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;authEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;bandSelectEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;ppskEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;usersLimit&amp;quot;:0,&amp;quot;radiusServerAll&amp;quot;:[],&amp;quot;isApartment&amp;quot;:&amp;quot;false&amp;quot;}"&gt;&lt;/a&gt; is not clickable at point (1707, 349). Other element would receive the click: &lt;div class="modal fade in" tabindex="-1" role="dialog" style="display: block; z-index: 2;"&gt;...&lt;/div&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.12' class='none'>
+    <td class='errorCase'><div class='testcase'>test13_ssid_ppsk: 验证SSID加密方式为PPSK</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.12')" >
+        error</a>
+
+    <div id='div_ft1.12' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.12: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 686, in test13_ssid_ppsk
+    self.operate.click_elem(config_ssid_edit)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;a class="icon icon-modify editSSID" data="{&amp;quot;id&amp;quot;:9345,&amp;quot;wlanId&amp;quot;:1,&amp;quot;ssidName&amp;quot;:&amp;quot;@test_default&amp;quot;,&amp;quot;ssidEncode&amp;quot;:&amp;quot;utf-8&amp;quot;,&amp;quot;relatedRadio&amp;quot;:&amp;quot;1,2&amp;quot;,&amp;quot;ishidden&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;fowardType&amp;quot;:&amp;quot;nat&amp;quot;,&amp;quot;encryptionMode&amp;quot;:&amp;quot;open&amp;quot;,&amp;quot;password&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;qosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;wlanQosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;authEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;bandSelectEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;ppskEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;usersLimit&amp;quot;:0,&amp;quot;radiusServerAll&amp;quot;:[],&amp;quot;isApartment&amp;quot;:&amp;quot;false&amp;quot;}"&gt;&lt;/a&gt; is not clickable at point (1707, 349). Other element would receive the click: &lt;div class="modal fade in" tabindex="-1" role="dialog" style="display: block; z-index: 2;"&gt;...&lt;/div&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.13' class='none'>
+    <td class='errorCase'><div class='testcase'>test14_ssid_speed_limit: 验证基于客户端限速/基于SSID限速命令下发成功</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.13')" >
+        error</a>
+
+    <div id='div_ft1.13' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.13: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 741, in test14_ssid_speed_limit
+    self.operate.click_elem(config_ssid_edit)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;a class="icon icon-modify editSSID" data="{&amp;quot;id&amp;quot;:9345,&amp;quot;wlanId&amp;quot;:1,&amp;quot;ssidName&amp;quot;:&amp;quot;@test_default&amp;quot;,&amp;quot;ssidEncode&amp;quot;:&amp;quot;utf-8&amp;quot;,&amp;quot;relatedRadio&amp;quot;:&amp;quot;1,2&amp;quot;,&amp;quot;ishidden&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;fowardType&amp;quot;:&amp;quot;nat&amp;quot;,&amp;quot;encryptionMode&amp;quot;:&amp;quot;open&amp;quot;,&amp;quot;password&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;qosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;wlanQosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;authEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;bandSelectEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;ppskEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;usersLimit&amp;quot;:0,&amp;quot;radiusServerAll&amp;quot;:[],&amp;quot;isApartment&amp;quot;:&amp;quot;false&amp;quot;}"&gt;&lt;/a&gt; is not clickable at point (1707, 349). Other element would receive the click: &lt;div class="modal fade in" tabindex="-1" role="dialog" style="display: block; z-index: 2;"&gt;...&lt;/div&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.14' class='none'>
+    <td class='errorCase'><div class='testcase'>test15_ssid_5G: 验证SSID 5G优先</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.14')" >
+        error</a>
+
+    <div id='div_ft1.14' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.14: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 806, in test15_ssid_5G
+    self.operate.click_elem(config_ssid_edit)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;a class="icon icon-modify editSSID" data="{&amp;quot;id&amp;quot;:9345,&amp;quot;wlanId&amp;quot;:1,&amp;quot;ssidName&amp;quot;:&amp;quot;@test_default&amp;quot;,&amp;quot;ssidEncode&amp;quot;:&amp;quot;utf-8&amp;quot;,&amp;quot;relatedRadio&amp;quot;:&amp;quot;1,2&amp;quot;,&amp;quot;ishidden&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;fowardType&amp;quot;:&amp;quot;nat&amp;quot;,&amp;quot;encryptionMode&amp;quot;:&amp;quot;open&amp;quot;,&amp;quot;password&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;qosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;wlanQosEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;authEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;bandSelectEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;ppskEnable&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;usersLimit&amp;quot;:0,&amp;quot;radiusServerAll&amp;quot;:[],&amp;quot;isApartment&amp;quot;:&amp;quot;false&amp;quot;}"&gt;&lt;/a&gt; is not clickable at point (1707, 349). Other element would receive the click: &lt;div class="modal fade in" tabindex="-1" role="dialog" style="display: block; z-index: 2;"&gt;...&lt;/div&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.15' class='none'>
+    <td class='errorCase'><div class='testcase'>test16_SSID_add: 验证可成功下发多个SSID</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.15')" >
+        error</a>
+
+    <div id='div_ft1.15' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.15: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 860, in test16_SSID_add
+    self.operate.click_elem(add_group_xpath)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;i id="addSSID" class="icon icon-add add-i"&gt;&lt;/i&gt; is not clickable at point (295, 272). Other element would receive the click: &lt;div class="modal fade in" tabindex="-1" role="dialog" style="display: block; z-index: 2;"&gt;...&lt;/div&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.16' class='none'>
+    <td class='errorCase'><div class='testcase'>test17_ssid_delete: 验证SSID可成功删除</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.16')" >
+        error</a>
+
+    <div id='div_ft1.16' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.16: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 916, in test17_ssid_delete
+    self.operate.click_elem(config_ssid_delete)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: element click intercepted: Element &lt;a class="icon icon-delete delSSID" data-index="0" data="9345" wlanid="1" title="Delete"&gt;&lt;/a&gt; is not clickable at point (1729, 349). Other element would receive the click: &lt;div class="modal fade in" tabindex="-1" role="dialog" style="display: block; z-index: 2;"&gt;...&lt;/div&gt;
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.17' class='none'>
+    <td class='errorCase'><div class='testcase'>test18_ssid_import: 验证可从其他分组导入SSID配置，不验证其他配置</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.17')" >
+        error</a>
+
+    <div id='div_ft1.17' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.17: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_config_basic_py_test18_ssid_import.png
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 970, in test18_ssid_import
+    self.operate.click_elem(add_groups_xpath)  # 点一次可能不生效, 多点几次
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_config_basic_py_test18_ssid_import.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>_ErrorHolder</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>ConfigDeliver)</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_config_basic_py_test18_ssid_import.png
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_deliver.py", line 40, in setUpClass
+    GroupInit(cls.driver).group_init()
+  File "C:\tracy\cloud_0813\Common\group_init.py", line 29, in group_init
+    self.operate.click_elem(key_OK)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_config_basic_py_test18_ssid_import.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>CloudConfigGroup</td>
+    <td>7</td>
+    <td>6</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',7)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_subgroup_add: 验证是否能添加子分组</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: SIL
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_subgroup_fold: 验证子分组可以展开/收起</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        pass</a>
+
+    <div id='div_pt3.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.2: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_config_group_py_test03_subgroup_fold.png
+Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_group_search: 验证可搜索到指定分组</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_group_device_add: 验证分组是否可添加设备成功</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_group_edit: 验证分组信息可编辑</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test07_group_config: 验证可进入分组配置页面</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft3.7' class='none'>
+    <td class='errorCase'><div class='testcase'>test08_group_config_delete: 验证分组可删除</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft3.7')" >
+        error</a>
+
+    <div id='div_ft3.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft3.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.7: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_group.py", line 181, in test08_group_config_delete
+    self.operate.click_elem(config_group_config)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+ElementNotVisibleException: Message: element not interactable
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>CloudConfigVoucher</td>
+    <td>8</td>
+    <td>7</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',8)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_add_package: 验证添加的voucher package列表中的描述信息与填入的信息一致</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: 1PC
+p_test2
+aaaaaa
+5.00
+1
+No
+1 Week
+500 MB
+2 Mbps
+2 Mbps
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_add_package_delete: 验证package list 可以添加多条并搜索</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_add_package_delete: 验证package list 可以删除</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.3')" >
+        pass</a>
+
+    <div id='div_pt4.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.3: (2, 1)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_add_package_edit: 验证package可编辑，voucher package列表中的描述信息与编辑填入的信息一致</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.4')" >
+        pass</a>
+
+    <div id='div_pt4.4' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.4: p_test0
+aaaaaa
+6.00
+2
+No
+1 Day
+1 GB
+256 Kbps
+5 Mbps
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_voucher_print: 验证输入的voucher信息与生成的voucher list显示的信息一致</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.5')" >
+        pass</a>
+
+    <div id='div_pt4.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.5: 
+oozf2a
+voucher_1
+p_test0
+6.00
+1 Day
+2019-11-18 16:18:21
+2019-11-18 16:18
+-
+0/2
+No
+0 MB/1 GB
+256 Kbps
+5 Mbps
+Not Activated
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_voucher_multiple_print: 验证打印出多个voucher,voucher list中的信息与package信息是否一致</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.6')" >
+        pass</a>
+
+    <div id='div_pt4.6' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.6: 2019-11-18 16:19
+
+thl262
+-
+p_test0
+6.00
+1 Day
+2019-11-18 16:19:22
+2019-11-18 16:19
+-
+0/2
+No
+0 MB/1 GB
+256 Kbps
+5 Mbps
+Not Activated
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test07_config_voucher_search: 验证可通过voucher code搜索到voucher</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft4.8' class='none'>
+    <td class='errorCase'><div class='testcase'>test08_config_ppsk_add: 验证ppsk账号可添加,可同步</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft4.8')" >
+        error</a>
+
+    <div id='div_ft4.8' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft4.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.8: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_config_voucher_py_test08_config_ppsk_add.png
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_voucher.py", line 294, in test08_config_ppsk_add
+    self.operate.click_elem(key_OK)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_config_voucher_py_test08_config_ppsk_add.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>DeviceAp</td>
+    <td>11</td>
+    <td>9</td>
+    <td>0</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',11)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_ap_alias: 验证AP别名可修改成功</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: 880
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_check_online_AP: 验证AP在线，配置同步</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        pass</a>
+
+    <div id='div_pt5.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.2: AP配置同步成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt5.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_ap_deliver: 验证AP配置可重新下发</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt5.3')" >
+        pass</a>
+
+    <div id='div_pt5.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt5.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.3: AP配置重新下发成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt5.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_ap_log: 验证设备详情中设备日志信息存在</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt5.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_ap_detail_cpu: 验证设备详情cpu/memory/traffic 信息是否有值，不验证其正确性</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt5.5')" >
+        pass</a>
+
+    <div id='div_pt5.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt5.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.5: 24.8dbafb3850242d526a5c2094e5961009.2592000.1576657613.282335-15401347
+74.0%
+{u'log_id': 1757150700850400274L, u'words_result_num': 1, u'words_result': [{u'words': u'74.0%'}]}
+74
+24.06366758e7b881421d2731a09e53be63.2592000.1576657614.282335-15401347
+8.0%
+{u'log_id': 1364568685821857554L, u'words_result_num': 1, u'words_result': [{u'words': u'8.0%'}]}
+8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft5.6' class='none'>
+    <td class='errorCase'><div class='testcase'>test04_ap_detail_version: 验证设备详情version信息与命令行一致，version信息：SN，model，hardware，version</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft5.6')" >
+        error</a>
+
+    <div id='div_ft5.6' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft5.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.6: (u'G1LQ66N033957', u'AP_RGOS 11.1(5)B40P9')
+C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_ap_cloudtest_as_py_test04_ap_detail_version.png
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_ap_cloudtest_as.py", line 208, in test04_ap_detail_version
+    self.operate.click_elem(device_running_version)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_ap_cloudtest_as_py_test04_ap_detail_version.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft5.7' class='none'>
+    <td class='errorCase'><div class='testcase'>test05_ap_detail_radio: 验证设备详情中radio信息与命令行一致，radio信息：带宽，信道</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft5.7')" >
+        error</a>
+
+    <div id='div_ft5.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft5.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.7: Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_ap_cloudtest_as.py", line 241, in test05_ap_detail_radio
+    self.operate.click_elem(add_device_device_info.format(add_device_alert_input_sn))
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 122, in click_elem
+    ele.click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=78.0.3904.97)
+  (Driver info: chromedriver=78.0.3904.70 (edb9c9f3de0247fd912a77b7f6cae7447f6d3ad5-refs/branch-heads/3904@{#800}),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt5.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_ap_restart: 验证AP能成功重启</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt5.8')" >
+        pass</a>
+
+    <div id='div_pt5.8' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt5.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.8: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_ap_cloudtest_as_py_test06_ap_restart.png
+Message: 
+
+Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt5.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test07_ap_diagnosis_tool: 验证可打开AP诊断工具</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt5.9')" >
+        pass</a>
+
+    <div id='div_pt5.9' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt5.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.9: AP running 命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt5.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_ap_move: 验证AP可成功移动分组</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt5.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test09_ap_delete: 验证AP可成功删除</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>DeviceEg</td>
+    <td>13</td>
+    <td>7</td>
+    <td>5</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',13)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_eg_list: 验证添加设备流程</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: N9E
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_eg_online: 验证eg是否在线</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt6.2')" >
+        pass</a>
+
+    <div id='div_pt6.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt6.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.2: EG上线
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.3' class='none'>
+    <td class='failCase'><div class='testcase'>test05_eg_basic: 验证eg的basic信息正确</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.3')" >
+        fail</a>
+
+    <div id='div_ft6.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.3: EG version 命令行返回成功
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 157, in test05_eg_basic
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_eg_cpu: 验证有eg的CPU和memory信息</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt6.4')" >
+        pass</a>
+
+    <div id='div_pt6.4' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt6.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.4: mmeory图片截图
+24.4bc78a356cd4f0b64fa15eae6f1179e5.2592000.1576658433.282335-15401347
+29.7
+{u'log_id': 2110582068266837938L, u'words_result_num': 1, u'words_result': [{u'words': u'29.7'}]}
+{u'log_id': 2110582068266837938L, u'words_result_num': 1, u'words_result': [{u'words': u'29.7'}]}
+29
+24.c0f6f4c1185adc1d1153b7c38e00b922.2592000.1576658434.282335-15401347
+5.0%
+{u'log_id': 5858723972023942290L, u'words_result_num': 1, u'words_result': [{u'words': u'5.0%'}]}
+{u'log_id': 5858723972023942290L, u'words_result_num': 1, u'words_result': [{u'words': u'5.0%'}]}
+5
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.5' class='none'>
+    <td class='failCase'><div class='testcase'>test07_eg_traffic: 验证eg的Top 10 Applications/users by Traffic图表有数据，无法验证数据的正确性</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.5')" >
+        fail</a>
+
+    <div id='div_ft6.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.5: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_EG_py_test07_eg_traffic.png
+Message: 
+
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 219, in test07_eg_traffic
+    self.assertIsNotNone(None, u"Top 10 Applications/users by Traffic图表无数据")
+AssertionError: Top 10 Applications/users by Traffic图表无数据
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_EG_py_test07_eg_traffic.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_eg_log: 验证是否有日志信息，无法验证日志信息的正确性</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.7' class='none'>
+    <td class='failCase'><div class='testcase'>test09_eg_eweb: 验证可访问EG 的EWEB</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.7')" >
+        fail</a>
+
+    <div id='div_ft6.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.7: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_EG_py_test09_eg_eweb.png
+Message: 
+
+Message: 
+
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 270, in test09_eg_eweb
+    self.assertNotEqual(flag, 0, u'time out')
+AssertionError: time out
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_EG_py_test09_eg_eweb.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.8' class='none'>
+    <td class='failCase'><div class='testcase'>test10_eg_telnet: 验证可telnet到EG</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.8')" >
+        fail</a>
+
+    <div id='div_ft6.8' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.8: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_EG_py_test10_eg_telnet.png
+Message: 
+
+Message: 
+
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 289, in test10_eg_telnet
+    self.assertNotEqual(flag, 0)
+AssertionError: 0 == 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_EG_py_test10_eg_telnet.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.9' class='none'>
+    <td class='errorCase'><div class='testcase'>test11_eg_SSH: 验证可通过SSH连接EG</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.9')" >
+        error</a>
+
+    <div id='div_ft6.9' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.9: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_EG_py_test11_eg_SSH.png
+Message: 
+
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 301, in test11_eg_SSH
+    self.assertIn('succeeded', t, u"SSH连接失败或SSH服务未开启")
+UnboundLocalError: local variable 't' referenced before assignment
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_EG_py_test11_eg_SSH.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.10' class='none'>
+    <td class='failCase'><div class='testcase'>test12_eg_diagnosis_tool: 验证EG的诊断工具可用,CWMP保活时间下发,下发设备别名</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.10')" >
+        fail</a>
+
+    <div id='div_ft6.10' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.10: AP running 命令行返回成功
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 337, in test12_eg_diagnosis_tool
+    self.assertIsNone(t)
+AssertionError: &lt;_sre.SRE_Match object at 0x02F6B950&gt; is not None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test13_eg_edit: 验证EG详情页面的描述信息可进行编辑</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test14_eg_password_edit: 验证可成功修改EG web 密码</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test15_eg_delete: 验证EG可成功删除</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>DeviceSw</td>
+    <td>11</td>
+    <td>9</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',11)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_SW_alias: 验证SW别名可修改成功</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: JML
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_check_online_SW: 验证SW在线</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.2')" >
+        pass</a>
+
+    <div id='div_pt7.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.2: SW成功上线
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft7.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test04_SW_detail_version: 验证设备详情version信息与命令行一致，version信息：SN，model，hardware，version</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft7.3')" >
+        error</a>
+
+    <div id='div_ft7.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft7.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.3: (u'XS-S1960-24GT4SFP-UP-H', u'S19_RGOS 11.4(1)B42P17')
+C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_sw_py_test04_SW_detail_version.png
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_sw.py", line 93, in test04_SW_detail_version
+    self.operate.click_elem(device_running_version)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_sw_py_test04_SW_detail_version.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft7.4' class='none'>
+    <td class='failCase'><div class='testcase'>test05_SW_detail_cpu: 验证交换机的cpu/memory信息有数据，不验证其正确性</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft7.4')" >
+        fail</a>
+
+    <div id='div_ft7.4' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft7.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.4: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_sw_py_test05_SW_detail_cpu.png
+Message: 
+
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_sw.py", line 130, in test05_SW_detail_cpu
+    self.assertIsNotNone(None, u"交换机的cpu/memory值为空或者speed数据为空")
+AssertionError: 交换机的cpu/memory值为空或者speed数据为空
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_sw_py_test05_SW_detail_cpu.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test07_SW_diagnosis_tool: 验证SW诊断工具可用</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.5')" >
+        pass</a>
+
+    <div id='div_pt7.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.5: 交换机命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_sw_setting_vlan: 验证下发vlan</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.6')" >
+        pass</a>
+
+    <div id='div_pt7.6' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.6: 交换机命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test09_sw_setting_port: 验证下发trunk/native vlan 接口配置</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.7')" >
+        pass</a>
+
+    <div id='div_pt7.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.7: (Port Gi0/5)
+交换机命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test15_sw_setting_rldp: 验证下发RLDP配置</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.8')" >
+        pass</a>
+
+    <div id='div_pt7.8' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.8: C:\tracy\cloud_0813\Report\screen_shot_2019-11-18\screen_shot_cloud_device_sw_py_test15_sw_setting_rldp.png
+Message: 
+
+交换机命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test16_sw_setting_cwmp: 验证CWMP保活时间下发</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test20_SW_move: 验证SW可成功移动分组</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test21_SW_delete: 验证SW可成功删除</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>68</td>
+    <td>41</td>
+    <td>6</td>
+    <td>21</td>
+    <td>0</td>
+    <td> </td>
+    <td> <a href="" target="_blank"></a></td>
+
+</tr>
+</table>
+
+<div id='ending'> </div>
+
+</body>
+</html>

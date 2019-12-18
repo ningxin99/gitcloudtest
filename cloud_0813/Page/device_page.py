@@ -79,7 +79,7 @@ device_sw_detail_vlan_delete = "//table[@id='vlan_table']/tbody/tr/td[1][text()=
 # 定位到开启了RLDP的交换机接口
 device_sw_detail_rldp_green = "//div[@id='rldp_SwitchPanel']//table/tbody/tr/td/div[contains(@class, 'green')]"
 # 定位到没有up的交换机接口
-device_sw_detail_int_down = "//div[@id='switchPanel']//table/tbody/tr/td/div[not(contains(@class, 'yellow'))]"
+device_sw_detail_int_down = "//div[@id='switchPanel']//table/tbody/tr/td/div[not(contains(@class, 'yellow')) and not(contains(@class, 'green'))][1]"
 # 修改接口为trunk口
 device_sw_detail_int_trunk = "//div[@id='switchPort_Config']/div/div/div[2]/div[2]/select/option[2]"
 device_sw_detail_int_access = "//div[@id='switchPort_Config']/div/div/div[2]/div[2]/select/option[1]"

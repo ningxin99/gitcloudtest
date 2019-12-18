@@ -36,11 +36,9 @@ class DeviceSw(unittest.TestCase):
     def test01_SW_alias(self):
         """验证SW别名可修改成功"""
         # 调试代码
-        # time.sleep(30)
-        # self.operate.click_elem(login_close_tips_xpath)
         # self.operate.click_elem(configuration_page_xpath)  # 没有等60s
         # self.operate.click_elem(configuration_basic_xpath)
-        # time.sleep(15)
+        # time.sleep(5)
         # self.operate.click_elem(add_device_monitoring)
         # self.operate.click_elem(add_device_switch)
         # 调试代码
@@ -85,6 +83,7 @@ class DeviceSw(unittest.TestCase):
         # 关闭
         self.operate.click_elem(add_device_device_info_close)
         # 查看命令行
+        self.operate.click_elem(sw_select)
         self.operate.click_elem(sw_more)
         self.operate.click_elem(sw_diagnosis)
         js1 = 'return $("#cli_result").val();'
@@ -218,9 +217,10 @@ class DeviceSw(unittest.TestCase):
         t = re.search("System", text)
         self.assertIsNotNone(t)
 
-    def test13_sw_setting_vlan(self):
+    def test09_sw_setting_vlan(self):
         """验证下发vlan"""
         self.operate.click_elem(add_device_monitoring)
+        self.operate.click_elem(add_device_switch)
         self.operate.click_elem(add_device_switch)
         time.sleep(5)
         self.operate.click_elem(add_device_SW_info.format(add_device_alert_input_sn_switch))
@@ -233,7 +233,7 @@ class DeviceSw(unittest.TestCase):
         self.operate.click_elem(add_device_device_info_close)
         self.operate.click_elem(add_device_monitoring)
         self.operate.click_elem(add_device_switch)
-        time.sleep(2)
+        time.sleep(40)
         # 查看命令行
         self.operate.click_elem(sw_select)
         self.operate.click_elem(sw_more)
@@ -266,20 +266,18 @@ class DeviceSw(unittest.TestCase):
         # 删除添加的vlan
         self.operate.click_elem(add_device_SW_info.format(add_device_alert_input_sn_switch))
         self.operate.click_elem(device_sw_detail_config)
-        self.operate.click_elem(device_sw_detail_vlan_page_last)
+        # self.operate.click_elem(device_sw_detail_vlan_page_last)
         self.operate.click_elem(device_sw_detail_vlan_delete.format(sw_vlan_id_input))
         self.operate.click_elem(key_OK)
         time.sleep(5)
         self.operate.click_elem(add_device_device_info_close)
         # 断言
-        t = re.search('VLAN'+ sw_vlan_id_input, text)
+        t = re.search('VLAN' + sw_vlan_id_input, text)
         if t is None:
             print text
         self.assertIsNotNone(t)
 
-
-
-    def test14_sw_setting_port(self):
+    def test10_sw_setting_port(self):
         """验证下发trunk/native vlan 接口配置"""
         self.operate.click_elem(add_device_monitoring)
         self.operate.click_elem(add_device_switch)
@@ -299,7 +297,7 @@ class DeviceSw(unittest.TestCase):
         self.operate.click_elem(add_device_device_info_close)
         self.operate.click_elem(add_device_monitoring)
         self.operate.click_elem(add_device_switch)
-        time.sleep(2)
+        time.sleep(15)
         # 查看命令行
         self.operate.click_elem(sw_select)
         self.operate.click_elem(sw_more)
@@ -331,7 +329,7 @@ class DeviceSw(unittest.TestCase):
         port = self.operate.find_elems(device_sw_detail_int_down)
         port[0].click()
         self.operate.click_elem(device_sw_detail_int_access)
-        self.operate.elem_clear_send_keys(device_sw_detail_int_accesss_vlan_id , '1')
+        self.operate.elem_clear_send_keys(device_sw_detail_int_accesss_vlan_id, '1')
         self.operate.click_elem(device_sw_detail_int_save)
         time.sleep(5)
         self.operate.click_elem(add_device_device_info_close)

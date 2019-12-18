@@ -19,5 +19,5 @@ CASE_PATH = os.path.join(BASE_PATH, 'Case')
 CONFIG_PATH = os.path.join(BASE_PATH, 'config')
 CASE_RECORD_PATH = os.path.join(BASE_PATH, 'Case-record')
 CASE_PATH_BASIC_OPERATE = os.path.join(CASE_PATH, 'basic_operate')
-
+CASE_PATH_BEFORE_UPGRADE = os.path.join(CASE_PATH, 'before_upgrade')
 

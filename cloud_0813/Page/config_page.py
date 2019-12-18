@@ -196,7 +196,7 @@ config_group_more_subgroup = "//li[@id='addSubGroup']/a"
 # 输入子分组名称
 config_group_subgroup_add = "//input[@id='groupName']"
 # 点击保存
-config_group_subgroup_add_save = "//button[text()='Save & Next']"
+config_group_subgroup_add_save = "//*[text()='Save & Next']"
 # 点击添加设备
 config_group_more_add_device = "//li[@id='addDevice']/a"
 # 点击编辑

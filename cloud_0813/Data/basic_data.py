@@ -12,30 +12,37 @@ import datetime
  # "https://cloud-as.ruijienetworks.com"
  # "https://cloudtest-as.ruijienetworks.com"
  # "http://172.17.126.124"
-login_url_local = "https://cloud-as.ruijienetworks.com"
+login_url_local = "http://172.18.24.131"
 # 登录cloud账号
 # 登陆cloud密码
-user_cloud_local = '321162718@qq.com'
-password_cloud_local = 'why961113'
+user_cloud_local = 'admin'
+password_cloud_local = 'admin'
+# 运行的用例包
+run_case_package = 'basic_operate'
+# run_case_package = 'before_upgrade'
 # 运行的用例名称，将会运行该文件夹下面的所有用例
 run_case_name = "cloud"
 # 接收测试报告的邮箱,多个邮箱用;隔开
 email_name = "321162718@qq.com;why119613@163.com"
 
 # 添加设备AP SN号
-add_device_alert_input_sn = '1234942570026'
+# add_device_alert_input_sn ='1234942570102'
+add_device_alert_input_sn = '1234942570014'#'G1LQ66N033957'
 add_device_alert_input_sn_710 = 'G1L919900130B'
 add_device_alert_input_sn_720 = 'G1LQ68P01315B'
 add_device_alert_input_sn_740 = '1234942570014'
 # 添加的交换机SN
-add_device_alert_input_sn_switch ='G1LL64B000501'
-#'1234567897412'
+add_device_alert_input_sn_switch = 'G1KW61Q00001A'
+#'G1JLB04000504'
+# 'G1KW61Q00001A'
+#'1234567897412''G1LL64B000501'
 # 添加的EG SN
-add_device_alert_input_sn_gateway ='H1M722K000264'
+add_device_alert_input_sn_gateway = 'G1ML11L000045'
 #  'H1K90RR000172'
 #  'H1K90RR000172'
 #  'H1MSC0M000147'
 #  'H1M722K000263'
+# 'H1M722K000264'
 """
 基本信息，必填!
 """

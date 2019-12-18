@@ -1,0 +1,3859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试用例：cloud</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { word-wrap:break-word;word-break:break-all;overflow:auto;}
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+    font-size: 16pt;
+    color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: 00;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 600px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }        }        if (id.substr(0,2) == 'st') {           if (level > 1) {               tr.className = '';            }           else {               tr.className = 'hiddenRow';           }
+        }
+    }
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+         if (!tr) {
+            tid = 's' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&');
+    s = s.replace(/</g,'<');
+    s = s.replace(/>/g,'>');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>测试用例：cloud</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-12-10 19:49:03</p>
+<p class='attribute'><strong>Duration:</strong> 1:29:04.960000</p>
+<p class='attribute'><strong>Status:</strong> Pass 47 Failure 14 Error 3</p>
+
+<p class='description'></p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>Skip</td>
+    <td>View</td>
+    <td>Screenshot</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>ConfigBasic</td>
+    <td>17</td>
+    <td>12</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',17)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_ssid_default_not_hidden: 验证SSID默认不隐藏</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: 4I7
+AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 1870 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_ssid_hidden: 验证配置SSID隐藏可以成功下发/SSID不加密</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 1890 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 1890 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_ssid_nat_common: 验证NAT地址池可成功下发</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2261 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 192.168.23.0 0.0.0.255 
+!
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 192.168.23.0 255.255.255.0
+ dns-server 218.85.80.141 
+ default-router 192.168.23.1 
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 233
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 192.168.23.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_ssid_nat_custom: 验证自定义的nat地址池可成功下发</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2312 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 218.85.80.141 
+ default-router 22.11.11.1 
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 233
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='failCase'><div class='testcase'>test06_ssid_nat_bridge: 验证AP bridge模式可成功下发/默认下发2个radio/默认支持128个客户端/telnet 密码下发/5G优先关闭</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        fail</a>
+
+    <div id='div_ft1.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2053 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 100
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface GigabitEthernet 0/1.100
+ encapsulation dot1Q 100
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 100
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 342, in test06_ssid_nat_bridge
+    self.assertIsNotNone(t_radio_max_client)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.6' class='none'>
+    <td class='failCase'><div class='testcase'>test07_ssid_radio_Max_clients: 验证radio 支持的最大客户端数下发成功</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
+        fail</a>
+
+    <div id='div_ft1.6' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.6: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2067 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 100
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface GigabitEthernet 0/1.100
+ encapsulation dot1Q 100
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ sta-limit 1
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 100
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 403, in test07_ssid_radio_Max_clients
+    self.assertIsNotNone(t_radio_2_client)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.7' class='none'>
+    <td class='failCase'><div class='testcase'>test08_ssid_bridge: 验证关闭radio 2,打开radio 1</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.7')" >
+        fail</a>
+
+    <div id='div_ft1.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.7: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2067 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 100
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface GigabitEthernet 0/1.100
+ encapsulation dot1Q 100
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ sta-limit 1
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 100
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 460, in test08_ssid_bridge
+    self.assertIsNotNone(t_radio_2)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.8' class='none'>
+    <td class='errorCase'><div class='testcase'>test09_ssid_bridge_2: 验证关闭radio 1,打开radio 2</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.8')" >
+        error</a>
+
+    <div id='div_ft1.8' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.8: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_config_basic_py_test09_ssid_bridge_2.png
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 472, in test09_ssid_bridge_2
+    self.operate.click_elem(config_ssid_radio_1)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_config_basic_py_test09_ssid_bridge_2.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test10_ssid_wpa_psk: 验证SSID加密方式为wpa_psk</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
+
+    <div id='div_pt1.9' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.9: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2200 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 100
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface GigabitEthernet 0/1.100
+ encapsulation dot1Q 100
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ sta-limit 1
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 100
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+ security wpa enable
+ security wpa ciphers aes enable
+ security wpa akm psk enable
+ security wpa akm psk set-key ascii 123456789
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test11_ssid_wpa2_psk: 验证SSID加密方式为wpa2_psk</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.10')" >
+        pass</a>
+
+    <div id='div_pt1.10' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.10: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2200 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 100
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface GigabitEthernet 0/1.100
+ encapsulation dot1Q 100
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ sta-limit 1
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 100
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+ security rsn enable
+ security rsn ciphers aes enable
+ security rsn akm psk enable
+ security rsn akm psk set-key ascii 111111111
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test12_ssid_wap_wpa2_psk: 验证SSID加密方式为wpa/wpa2_psk</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.11')" >
+        pass</a>
+
+    <div id='div_pt1.11' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.11: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2333 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 100
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface GigabitEthernet 0/1.100
+ encapsulation dot1Q 100
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ sta-limit 1
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 100
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+ security rsn enable
+ security rsn ciphers aes enable
+ security rsn akm psk enable
+ security rsn akm psk set-key ascii 111111111
+ security wpa enable
+ security wpa ciphers aes enable
+ security wpa akm psk enable
+ security wpa akm psk set-key ascii 111111111
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test13_ssid_ppsk: 验证SSID加密方式为PPSK</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.12')" >
+        pass</a>
+
+    <div id='div_pt1.12' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.12: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2265 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 100
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface GigabitEthernet 0/1.100
+ encapsulation dot1Q 100
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ sta-limit 1
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 100
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+ security rsn enable
+ security rsn ciphers aes enable
+ security rsn akm psk enable
+ security wpa enable
+ security wpa ciphers aes enable
+ security wpa akm psk enable
+ security sta-psk enable
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test14_ssid_speed_limit: 验证基于客户端限速/基于SSID限速命令下发成功</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.13')" >
+        pass</a>
+
+    <div id='div_pt1.13' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.13: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2640 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ no broadcast-ssid
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+vlan 100
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface GigabitEthernet 0/1.100
+ encapsulation dot1Q 100
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ sta-limit 1
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 6
+ chan-width 0
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 100
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+ security rsn enable
+ security rsn ciphers aes enable
+ security rsn akm psk enable
+ security wpa enable
+ security wpa ciphers aes enable
+ security wpa akm psk enable
+ security sta-psk enable
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+wlan-qos wlan-based 1 total-user-limit up-streams average-data-rate 100 burst-data-rate 100
+wlan-qos wlan-based 1 total-user-limit down-streams average-data-rate 100 burst-data-rate 100
+wlan-qos wlan-based 1 per-user-limit up-streams average-data-rate 100 burst-data-rate 100
+wlan-qos wlan-based 1 per-user-limit down-streams average-data-rate 100 burst-data-rate 100
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.14' class='none'>
+    <td class='failCase'><div class='testcase'>test16_SSID_add: 验证可成功下发多个SSID</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.14')" >
+        fail</a>
+
+    <div id='div_ft1.14' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.14: AP MBSSID 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+MBSSID:
+name: Dot11radio 1/0.1
+wlan id: 1
+   ssid: @test_default
+  bssid: 06d0.f822.33bf
+
+   name: Dot11radio 1/0.2
+wlan id: 2
+   ssid: 2_auto
+  bssid: 0ad0.f822.33bf
+
+   name: Dot11radio 1/0.3
+wlan id: 3
+   ssid: 3_auto
+  bssid: 0ed0.f822.33bf
+
+   name: Dot11radio 1/0.4
+wlan id: 4
+   ssid: 4_auto
+  bssid: 12d0.f822.33bf
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 948, in test16_SSID_add
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test17_ssid_delete: 验证SSID可成功删除</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.15')" >
+        pass</a>
+
+    <div id='div_pt1.15' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.15: AP MBSSID 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+MBSSID:
+None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test18_ssid_import: 验证可从其他分组导入SSID配置，不验证其他配置</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.16')" >
+        pass</a>
+
+    <div id='div_pt1.16' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.16: get group name
+G90
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test20_ssid_5G: 验证SSID 5G优先</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.17')" >
+        pass</a>
+
+    <div id='div_pt1.17' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.17: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_config_basic_py_test20_ssid_5G.png
+Message: 
+
+Message: 
+
+6minAP上线或同步配置失败
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>ConfigDeliver</td>
+    <td>7</td>
+    <td>3</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',7)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_ap: 将AP sh run 的命令行写入cmd.text</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: P1V
+AP running 命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_settings_cwmp: 验证下发的CWMP保活时间为180s</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft2.3' class='none'>
+    <td class='failCase'><div class='testcase'>test03_setting_radio_country_code: 验证下发默认国家码和配置的带宽,信道</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        fail</a>
+
+    <div id='div_ft2.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.3: Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 1962 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+web-auth acl white-url 3.3.3.3
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 3
+ chan-width 40
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_deliver.py", line 118, in test03_setting_radio_country_code
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft2.4' class='none'>
+    <td class='failCase'><div class='testcase'>test04_setting_radio_power: 验证下发radio的功率</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft2.4')" >
+        fail</a>
+
+    <div id='div_ft2.4' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.4: Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 1962 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+web-auth acl white-url 3.3.3.3
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 3
+ chan-width 40
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_deliver.py", line 127, in test04_setting_radio_power
+    self.assertIsNotNone(t2)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft2.5' class='none'>
+    <td class='failCase'><div class='testcase'>test05_setting_device_name: 验证下发设备别名</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft2.5')" >
+        fail</a>
+
+    <div id='div_ft2.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft2.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.5: Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 1962 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+web-auth acl white-url 3.3.3.3
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 3
+ chan-width 40
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_deliver.py", line 134, in test05_setting_device_name
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt2.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_setting_log: 验证下发log服务器地址</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft2.7' class='none'>
+    <td class='failCase'><div class='testcase'>test07_setting_RF_parameter: 验证radio限制连接用户数</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft2.7')" >
+        fail</a>
+
+    <div id='div_ft2.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft2.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.7: Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 1962 bytes
+
+version AP_RGOS 11.1(9)B1P19, Release(06200910)
+wqos fs enable
+fair-schedule
+ip dhcp snooping
+wids
+!
+black-white-list
+!
+http redirect port 443
+web-auth acct-update-interval 1
+web-auth sta-preemption enable
+web-auth acl white-url graph.facebook.com
+web-auth acl white-url www.facebook.com
+web-auth acl white-url connect.facebook.net
+web-auth acl white-url staticxx.facebook.com
+web-auth acl white-url 3.3.3.3
+!
+spectral
+ spectral stability bth 1
+ spectral stability mwo 1
+!
+cwmp
+ acs url http://172.18.24.131/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+!
+free-url url *.facebook.net
+free-url url *.facebook.com
+free-url url *.akamaihd.net
+free-url url *.fbcdn.net
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 035122110c37067e4741
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://172.18.24.131:80/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://172.18.24.131:80
+no service password-encryption
+!
+clock timezone AsiaHongKong +8 0
+!
+dot11 wlan 1
+ ssid @test_default
+ ssid-code utf-8
+!
+link-check disable
+!
+nfpp
+!
+wlocation
+!
+vlan 1
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ country-code CN
+ radio-type 802.11b
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 7
+ channel 3
+ chan-width 40
+ station-role root-ap
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+!
+wlansec 1
+!
+ntp server cn.pool.ntp.org
+ntp server 0.cn.pool.ntp.org
+ntp server asia.pool.ntp.org
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_deliver.py", line 151, in test07_setting_RF_parameter
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CloudConfigGroup</td>
+    <td>7</td>
+    <td>7</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',7)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_subgroup_add: 验证是否能添加子分组</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: D72
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_subgroup_fold: 验证子分组可以展开/收起</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        pass</a>
+
+    <div id='div_pt3.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.2: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_config_group_py_test03_subgroup_fold.png
+Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_group_search: 验证可搜索到指定分组</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_group_device_add: 验证分组是否可添加设备成功</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_group_edit: 验证分组信息可编辑</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test07_group_config: 验证可进入分组配置页面</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_group_config_delete: 验证分组可删除</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt3.7')" >
+        pass</a>
+
+    <div id='div_pt3.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt3.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.7: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_config_group_py_test08_group_config_delete.png
+Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CloudConfigVoucher</td>
+    <td>8</td>
+    <td>8</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',8)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_add_package: 验证添加的voucher package列表中的描述信息与填入的信息一致</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: MAE
+p_test2
+aaaaaa
+5.00
+1
+No
+1 Week
+500 MB
+2 Mbps
+2 Mbps
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_add_package_delete: 验证package list 可以添加多条并搜索</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_add_package_delete: 验证package list 可以删除</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.3')" >
+        pass</a>
+
+    <div id='div_pt4.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.3: (2, 1)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_add_package_edit: 验证package可编辑，voucher package列表中的描述信息与编辑填入的信息一致</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.4')" >
+        pass</a>
+
+    <div id='div_pt4.4' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.4: p_test0
+aaaaaa
+6.00
+2
+No
+1 Day
+1 GB
+256 Kbps
+5 Mbps
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_voucher_print: 验证输入的voucher信息与生成的voucher list显示的信息一致</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.5')" >
+        pass</a>
+
+    <div id='div_pt4.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.5: 
+25oz7x
+voucher_1
+p_test0
+6.00
+1 Day
+2019-12-10 20:35:02
+2019-12-10 20:35
+-
+0/2
+No
+0 MB/1 GB
+256 Kbps
+5 Mbps
+Not Activated
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_voucher_multiple_print: 验证打印出多个voucher,voucher list中的信息与package信息是否一致</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.6')" >
+        pass</a>
+
+    <div id='div_pt4.6' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.6: 2019-12-10 20:36
+
+zyvrtg
+-
+p_test0
+6.00
+1 Day
+2019-12-10 20:36:02
+2019-12-10 20:36
+-
+0/2
+No
+0 MB/1 GB
+256 Kbps
+5 Mbps
+Not Activated
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test07_config_voucher_search: 验证可通过voucher code搜索到voucher</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt4.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_config_ppsk_add: 验证ppsk账号可添加,可同步</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt4.8')" >
+        pass</a>
+
+    <div id='div_pt4.8' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt4.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.8: 2019-12-10 20:38
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>_ErrorHolder</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='errorCase'><div class='testcase'>DeviceAp)</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        error</a>
+
+    <div id='div_ft5.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: 2019-12-10 20:38
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_ap_cloudtest_as.py", line 28, in setUpClass
+    cls.group_name = AddGroup(cls.driver, device_sn={'ap': add_device_alert_input_sn}).add_group()
+  File "C:\tracy\cloud_0813\Common\add_group.py", line 40, in add_group
+    self.operate.click_elem(add_groups_xpath)  # 点一次可能不生效, 多点几次
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>DeviceEg</td>
+    <td>13</td>
+    <td>7</td>
+    <td>5</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',13)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_eg_list: 验证添加设备流程</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: U5I
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_eg_online: 验证eg是否在线</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt6.2')" >
+        pass</a>
+
+    <div id='div_pt6.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt6.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.2: EG上线
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.3' class='none'>
+    <td class='failCase'><div class='testcase'>test05_eg_basic: 验证eg的basic信息正确</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.3')" >
+        fail</a>
+
+    <div id='div_ft6.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.3: EG version 命令行返回成功
+RG-EG1000C RGOS 11.9(1)B11S1, Release(06152822) RGOS 11.9\(1\)B11S1, Release\(06152822\) G1ML11L000045
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Version:
+System description      : ws5308
+System start time       : 2019-11-30 15:30:12
+System uptime           : 10:05:14:53
+System hardware version : 1.00
+System software version : RGOS 11.9(1)B11S1, Release(06152822)
+System patch number     : NA
+System serial number    : G1ML11L000045
+System boot version     : 1.3.28
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 159, in test05_eg_basic
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.4' class='none'>
+    <td class='failCase'><div class='testcase'>test06_eg_cpu: 验证有eg的CPU和memory信息</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.4')" >
+        fail</a>
+
+    <div id='div_ft6.4' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.4: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test06_eg_cpu.png
+Message: 
+
+cpu/memory无数据
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 212, in test06_eg_cpu
+    self.assertIn(int(val_memory), range(1, 90))
+AssertionError: 0 not found in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test06_eg_cpu.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.5' class='none'>
+    <td class='failCase'><div class='testcase'>test07_eg_traffic: 验证eg的Top 10 Applications/users by Traffic图表有数据，无法验证数据的正确性</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.5')" >
+        fail</a>
+
+    <div id='div_ft6.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.5: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test07_eg_traffic.png
+Message: 
+
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 224, in test07_eg_traffic
+    self.assertIsNotNone(None, u"Top 10 Applications/users by Traffic图表无数据")
+AssertionError: Top 10 Applications/users by Traffic图表无数据
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test07_eg_traffic.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_eg_log: 验证是否有日志信息，无法验证日志信息的正确性</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.7' class='none'>
+    <td class='failCase'><div class='testcase'>test09_eg_eweb: 验证可访问EG 的EWEB</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.7')" >
+        fail</a>
+
+    <div id='div_ft6.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.7: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test09_eg_eweb.png
+Message: 
+
+Message: 
+
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 275, in test09_eg_eweb
+    self.assertNotEqual(flag, 0, u'time out')
+AssertionError: time out
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test09_eg_eweb.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.8' class='none'>
+    <td class='failCase'><div class='testcase'>test10_eg_telnet: 验证可telnet到EG</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.8')" >
+        fail</a>
+
+    <div id='div_ft6.8' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.8: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test10_eg_telnet.png
+Message: 
+
+Message: 
+
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 294, in test10_eg_telnet
+    self.assertNotEqual(flag, 0)
+AssertionError: 0 == 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test10_eg_telnet.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft6.9' class='none'>
+    <td class='errorCase'><div class='testcase'>test11_eg_SSH: 验证可通过SSH连接EG</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft6.9')" >
+        error</a>
+
+    <div id='div_ft6.9' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft6.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.9: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test11_eg_SSH.png
+Message: 
+
+C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test11_eg_SSH.png
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_EG.py", line 309, in test11_eg_SSH
+    self.operate.click_elem(device_eg_ssh_close)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_EG_py_test11_eg_SSH.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test12_eg_diagnosis_tool: 验证EG的诊断工具可用,CWMP保活时间下发,下发设备别名</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt6.10')" >
+        pass</a>
+
+    <div id='div_pt6.10' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt6.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.10: AP running 命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test13_eg_edit: 验证EG详情页面的描述信息可进行编辑</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test14_eg_password_edit: 验证可成功修改EG web 密码</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt6.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test15_eg_delete: 验证EG可成功删除</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>DeviceSw</td>
+    <td>11</td>
+    <td>10</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',11)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_SW_alias: 验证SW别名可修改成功</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: 1LE
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test01_check_online_SW: 验证SW在线</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.2')" >
+        pass</a>
+
+    <div id='div_pt7.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.2: SW成功上线
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_SW_detail_version: 验证设备详情version信息与命令行一致，version信息：SN，model，hardware，version</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.3')" >
+        pass</a>
+
+    <div id='div_pt7.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.3: (u'XS-S1960-24GT4SFP-UP-H', u'S19_RGOS 11.4(1)B42P17')
+交换机命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft7.4' class='none'>
+    <td class='failCase'><div class='testcase'>test05_SW_detail_cpu: 验证交换机的cpu/memory信息有数据，不验证其正确性</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft7.4')" >
+        fail</a>
+
+    <div id='div_ft7.4' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft7.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.4: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_sw_py_test05_SW_detail_cpu.png
+Message: 
+
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_device_sw.py", line 129, in test05_SW_detail_cpu
+    self.assertIsNotNone(None, u"交换机的cpu/memory值为空或者speed数据为空")
+AssertionError: 交换机的cpu/memory值为空或者speed数据为空
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_sw_py_test05_SW_detail_cpu.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test07_SW_diagnosis_tool: 验证SW诊断工具可用</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.5')" >
+        pass</a>
+
+    <div id='div_pt7.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.5: 交换机命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test09_sw_setting_vlan: 验证下发vlan</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.6')" >
+        pass</a>
+
+    <div id='div_pt7.6' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.6: 交换机命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test10_sw_setting_port: 验证下发trunk/native vlan 接口配置</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.7')" >
+        pass</a>
+
+    <div id='div_pt7.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.7: (Port Gi0/3)
+交换机命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test15_sw_setting_rldp: 验证下发RLDP配置</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt7.8')" >
+        pass</a>
+
+    <div id='div_pt7.8' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt7.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.8: C:\tracy\cloud_0813\Report\screen_shot_2019-12-10\screen_shot_cloud_device_sw_py_test15_sw_setting_rldp.png
+Message: 
+
+交换机命令行返回成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test16_sw_setting_cwmp: 验证CWMP保活时间下发</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test20_SW_move: 验证SW可成功移动分组</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt7.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test21_SW_delete: 验证SW可成功删除</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>64</td>
+    <td>47</td>
+    <td>14</td>
+    <td>3</td>
+    <td>0</td>
+    <td> </td>
+    <td> <a href="" target="_blank"></a></td>
+
+</tr>
+</table>
+
+<div id='ending'> </div>
+
+</body>
+</html>

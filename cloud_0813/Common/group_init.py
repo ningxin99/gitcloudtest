@@ -26,7 +26,7 @@ class GroupInit:
         self.operate.click_elem(config_basic_advance)
         self.operate.click_elem(config_basic_advance_add_white)
         self.operate.elem_send_keys(config_basic_advance_add_white_ip, white_list_ip_input)
-        self.operate.click_elem(key_OK)
+        self.operate.click_elem(whitelist_key_OK )
         self.operate.click_elem(add_SSID_save)
         time.sleep(5)
         # 设置国家码

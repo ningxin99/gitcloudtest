@@ -1,0 +1,2953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试用例：cloud</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { word-wrap:break-word;word-break:break-all;overflow:auto;}
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+    font-size: 16pt;
+    color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: 00;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 600px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }        }        if (id.substr(0,2) == 'st') {           if (level > 1) {               tr.className = '';            }           else {               tr.className = 'hiddenRow';           }
+        }
+    }
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+         if (!tr) {
+            tid = 's' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&');
+    s = s.replace(/</g,'<');
+    s = s.replace(/>/g,'>');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>测试用例：cloud</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-11-21 18:41:43</p>
+<p class='attribute'><strong>Duration:</strong> 0:42:47.206000</p>
+<p class='attribute'><strong>Status:</strong> Pass 12 Failure 11 Error 3</p>
+
+<p class='description'></p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>Skip</td>
+    <td>View</td>
+    <td>Screenshot</td>
+</tr>
+
+<tr class='failClass'>
+    <td>ConfigBasic</td>
+    <td>17</td>
+    <td>6</td>
+    <td>11</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',17)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test02_ssid_default_not_hidden: 验证SSID默认不隐藏</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: MRK
+AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2413 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 128
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 87, in test02_ssid_default_not_hidden
+    self.assertEqual(sync_state, 'Synchronized', u'AP有某项配置同步失败')
+AssertionError: AP有某项配置同步失败
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='failCase'><div class='testcase'>test03_ssid_hidden: 验证配置SSID隐藏可以成功下发/SSID不加密</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        fail</a>
+
+    <div id='div_ft1.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2413 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 128
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2413 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 128
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 147, in test03_ssid_hidden
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_ssid_nat_common: 验证NAT地址池可成功下发</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2413 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 128
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_ssid_nat_custom: 验证自定义的nat地址池可成功下发</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2413 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 128
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='failCase'><div class='testcase'>test06_ssid_nat_bridge: 验证AP bridge模式可成功下发/默认下发2个radio/默认支持128个客户端/telnet 密码下发/5G优先关闭</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        fail</a>
+
+    <div id='div_ft1.5' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2413 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 128
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 341, in test06_ssid_nat_bridge
+    self.assertIsNotNone(t_bridge)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.6' class='none'>
+    <td class='failCase'><div class='testcase'>test07_ssid_radio_Max_clients: 验证radio 支持的最大客户端数下发成功</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
+        fail</a>
+
+    <div id='div_ft1.6' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.6: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2413 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 128
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 403, in test07_ssid_radio_Max_clients
+    self.assertIsNotNone(t_radio_2_client)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test08_ssid_bridge: 验证关闭radio 2,打开radio 1</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2422 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 1
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ shutdown
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.8' class='none'>
+    <td class='failCase'><div class='testcase'>test09_ssid_bridge_2: 验证关闭radio 1,打开radio 2</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.8')" >
+        fail</a>
+
+    <div id='div_ft1.8' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.8: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2411 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 1
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 517, in test09_ssid_bridge_2
+    self.assertIsNotNone(t_radio_1)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.9' class='none'>
+    <td class='failCase'><div class='testcase'>test10_ssid_wpa_psk: 验证SSID加密方式为wpa_psk</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.9')" >
+        fail</a>
+
+    <div id='div_ft1.9' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.9: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2422 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ shutdown
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 1
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 581, in test10_ssid_wpa_psk
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.10' class='none'>
+    <td class='failCase'><div class='testcase'>test11_ssid_wpa2_psk: 验证SSID加密方式为wpa2_psk</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.10')" >
+        fail</a>
+
+    <div id='div_ft1.10' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.10: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2422 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ shutdown
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 1
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 641, in test11_ssid_wpa2_psk
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.11' class='none'>
+    <td class='failCase'><div class='testcase'>test12_ssid_wap_wpa2_psk: 验证SSID加密方式为wpa/wpa2_psk</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.11')" >
+        fail</a>
+
+    <div id='div_ft1.11' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.11: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2422 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ shutdown
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 1
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 706, in test12_ssid_wap_wpa2_psk
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.12' class='none'>
+    <td class='failCase'><div class='testcase'>test13_ssid_ppsk: 验证SSID加密方式为PPSK</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.12')" >
+        fail</a>
+
+    <div id='div_ft1.12' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.12: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2422 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ shutdown
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 1
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 764, in test13_ssid_ppsk
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test14_ssid_speed_limit: 验证基于客户端限速/基于SSID限速命令下发成功</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.13')" >
+        pass</a>
+
+    <div id='div_pt1.13' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.13: AP running 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+Running Config:
+Building configuration...
+Current configuration: 2797 bytes
+
+version AP_RGOS 11.1(5)B40P9
+hostname ap00000
+wqos fs enable
+fair-schedule
+!
+ip access-list standard 2
+ 20 permit 22.11.11.0 0.0.0.255 
+!
+ip dhcp snooping
+sntp interval 60
+sntp server cn.pool.ntp.org
+sntp enable
+!
+http redirect port 443
+web-auth sta-preemption enable
+!
+spectral
+!
+cwmp
+ acs url https://cloudtest-as.ruijienetworks.com/service/tr069servlet
+ cpe inform interval 180
+ timer cpe-timeout 90
+ no cpe back-up
+!
+service dhcp
+!
+ip dhcp pool macc_sta_pool
+ network 22.11.11.0 255.255.255.0
+ dns-server 192.168.58.110 
+ default-router 22.11.11.1 
+!
+enable service web-server http
+enable service web-server https
+webmaster level 0 username admin password 7 131707430728177a7e56
+macc wis enable
+macc nat-config vlan 233 network 22.11.11.0 255.255.255.0
+log_mng set up HTTP
+log_mng set uu http://cloudtest-as.ruijienetworks.com/macclog/log/upload
+log_mng set upd 300
+log_mng set log-server http://cloudtest-as.ruijienetworks.com
+no service password-encryption
+!
+logging server 192.168.101.19
+clock timezone AsiaHongKong +8 0
+country-code CN
+!
+dot11 wlan 1
+ ssid VPC
+ ssid-code utf-8
+!
+dot11 wlan 2
+!
+link-check disable
+!
+nfpp
+!
+wids
+!
+wlocation
+!
+vlan 1
+!
+vlan 233
+!
+interface GigabitEthernet 0/1
+ encapsulation dot1Q 1
+ ip dhcp snooping trust
+!
+interface Dot11radio 1/0
+ shutdown
+ no ampdu-rts
+ rate-set 11b mandatory 1 2 5 11
+ rate-set 11g mandatory 1 2 5 11
+ rate-set 11g support 6 9 12 18 24 36 48 54
+ rate-set 11n mcs-support 15
+ radio-type 802.11b
+ antenna receive 3
+ antenna transmit 3
+ sta-limit 1
+ channel 6
+ chan-width 20
+!
+interface Dot11radio 1/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface Dot11radio 2/0
+ no ampdu-rts
+ rate-set 11a mandatory 6 12 24
+ rate-set 11a support 9 18 36 48 54
+ rate-set 11n mcs-support 15
+ rate-set 11ac mcs-support 19
+ no short-preamble
+ radio-type 802.11a
+ antenna receive 3
+ antenna transmit 3
+ mu-mimo enable
+ sta-limit 100
+ 11acsupport enable
+ channel 149
+ chan-width 40
+!
+interface Dot11radio 2/0.1
+ encapsulation dot1Q 1
+ wlan-id 1
+!
+interface BVI 1
+ ip address dhcp
+ ip nat outside
+!
+interface BVI 233
+ ip address 22.11.11.1 255.255.255.0
+ ip nat inside
+!
+wlansec 1
+!
+wlan-qos wlan-based 1 total-user-limit up-streams average-data-rate 100 burst-data-rate 100
+wlan-qos wlan-based 1 total-user-limit down-streams average-data-rate 100 burst-data-rate 100
+wlan-qos wlan-based 1 per-user-limit up-streams average-data-rate 100 burst-data-rate 100
+wlan-qos wlan-based 1 per-user-limit down-streams average-data-rate 100 burst-data-rate 100
+!
+ip nat inside source list 2 interface BVI 1
+!
+no offline-detect
+!
+line console 0
+ login
+ password admin
+line vty 0 4
+ privilege level 15
+ login
+ password ruijie123
+!
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.14' class='none'>
+    <td class='failCase'><div class='testcase'>test16_SSID_add: 验证可成功下发多个SSID</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.14')" >
+        fail</a>
+
+    <div id='div_ft1.14' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.14: AP MBSSID 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+MBSSID:
+name: Dot11radio 2/0.1
+wlan id: 1
+   ssid: VPC
+  bssid: 0674.9c08.2f09
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 948, in test16_SSID_add
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.15' class='none'>
+    <td class='failCase'><div class='testcase'>test17_ssid_delete: 验证SSID可成功删除</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.15')" >
+        fail</a>
+
+    <div id='div_ft1.15' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.15: AP MBSSID 命令行返回成功
+Please select the target operation on the left
+
+
+
+
+Please wait...
+
+MBSSID:
+name: Dot11radio 2/0.1
+wlan id: 1
+   ssid: VPC
+  bssid: 0674.9c08.2f09
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_basic.py", line 1005, in test17_ssid_delete
+    self.assertIsNotNone(t)
+AssertionError: unexpectedly None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test18_ssid_import: 验证可从其他分组导入SSID配置，不验证其他配置</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.16')" >
+        pass</a>
+
+    <div id='div_pt1.16' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.16: get group name
+91Y
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test20_ssid_5G: 验证SSID 5G优先</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.17')" >
+        pass</a>
+
+    <div id='div_pt1.17' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.17: C:\tracy\cloud_0813\Report\screen_shot_2019-11-21\screen_shot_cloud_config_basic_py_test20_ssid_5G.png
+Message: 
+
+Message: 
+
+6minAP上线或同步配置失败
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>_ErrorHolder</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',2)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>ConfigDeliver)</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: C:\tracy\cloud_0813\Report\screen_shot_2019-11-21\screen_shot_cloud_config_basic_py_test20_ssid_5G.png
+Message: 
+
+Message: 
+
+6minAP上线或同步配置失败
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_deliver.py", line 40, in setUpClass
+    GroupInit(cls.driver).group_init()
+  File "C:\tracy\cloud_0813\Common\group_init.py", line 29, in group_init
+    self.operate.click_elem(key_OK)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-21\screen_shot_cloud_config_basic_py_test20_ssid_5G.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='ft2.2' class='none'>
+    <td class='errorCase'><div class='testcase'>CloudConfigVoucher)</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        error</a>
+
+    <div id='div_ft2.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.2: C:\tracy\cloud_0813\Report\screen_shot_2019-11-21\screen_shot_cloud_config_group_py_test08_group_config_delete.png
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_voucher.py", line 26, in setUpClass
+    Login(cls.driver, user_cloud_local, password_cloud_local, login_url_local).login()
+  File "C:\tracy\cloud_0813\Common\login.py", line 25, in login
+    self.operate.elem_send_keys(user_name_xpath, self.login_user)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 135, in elem_send_keys
+    self.elem_wait(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 63, in elem_wait
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-21\screen_shot_cloud_config_group_py_test08_group_config_delete.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>CloudConfigGroup</td>
+    <td>7</td>
+    <td>6</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',7)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test02_subgroup_add: 验证是否能添加子分组</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: 2K1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test03_subgroup_fold: 验证子分组可以展开/收起</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        pass</a>
+
+    <div id='div_pt3.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.2: C:\tracy\cloud_0813\Report\screen_shot_2019-11-21\screen_shot_cloud_config_group_py_test03_subgroup_fold.png
+Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test04_group_search: 验证可搜索到指定分组</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test05_group_device_add: 验证分组是否可添加设备成功</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test06_group_edit: 验证分组信息可编辑</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='pt3.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test07_group_config: 验证可进入分组配置页面</div></td>
+    <td colspan='6' align='center'>pass</td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft3.7' class='none'>
+    <td class='errorCase'><div class='testcase'>test08_group_config_delete: 验证分组可删除</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft3.7')" >
+        error</a>
+
+    <div id='div_ft3.7' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft3.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.7: C:\tracy\cloud_0813\Report\screen_shot_2019-11-21\screen_shot_cloud_config_group_py_test08_group_config_delete.png
+Traceback (most recent call last):
+  File "C:\tracy\cloud_0813\Case\basic_operate\cloud_config_group.py", line 188, in test08_group_config_delete
+    self.operate.click_elem(device_select)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 119, in click_elem
+    self.elem_wait_click(locator, by, wait_times)
+  File "C:\tracy\cloud_0813\Common\com_function.py", line 83, in elem_wait_click
+    raise e
+TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="C:\tracy\cloud_0813\Report\screen_shot_2019-11-21\screen_shot_cloud_config_group_py_test08_group_config_delete.png" target="_blank">screen_shot</a>
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>26</td>
+    <td>12</td>
+    <td>11</td>
+    <td>3</td>
+    <td>0</td>
+    <td> </td>
+    <td> <a href="" target="_blank"></a></td>
+
+</tr>
+</table>
+
+<div id='ending'> </div>
+
+</body>
+</html>
